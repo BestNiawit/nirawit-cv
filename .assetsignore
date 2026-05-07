@@ -1,0 +1,15 @@
+# Files in the repo that should NOT be served from the public site.
+# Uses gitignore syntax. Docs: https://developers.cloudflare.com/workers/static-assets/binding/#ignoring-assets
+
+.git/
+.wrangler/
+.gitignore
+.assetsignore
+wrangler.jsonc
+node_modules/
+package.json
+package-lock.json
+*.md
+.DS_Store
+.vscode/
+.idea/
