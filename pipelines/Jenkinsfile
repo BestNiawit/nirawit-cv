@@ -1,0 +1,175 @@
+// ─────────────────────────────────────────────────────────────
+//  Sample QA Pipeline — Jenkinsfile (declarative)
+//  Author: Nirawit Thepsawade
+//
+//  Portfolio sample showing a full QA pipeline I'd own as QA Lead:
+//  lint → unit (JEST) → API (Robot Framework) → E2E (Playwright)
+//  → performance (k6) → quality gate → Slack/email notify → Grafana push.
+//
+//  NOT wired to the CV site itself — included to demonstrate
+//  the kind of pipelines I write at Ayodia.
+// ─────────────────────────────────────────────────────────────
+
+pipeline {
+  agent any
+
+  parameters {
+    choice(name: 'TARGET_ENV', choices: ['staging', 'uat', 'production'], description: 'Environment to test against')
+    booleanParam(name: 'RUN_PERF',  defaultValue: true,  description: 'Run k6 performance suite')
+    booleanParam(name: 'RUN_E2E',   defaultValue: true,  description: 'Run Playwright E2E suite')
+  }
+
+  environment {
+    SLACK_CHANNEL  = '#qa-alerts'
+    SLACK_WEBHOOK  = credentials('slack-qa-webhook')
+    GRAFANA_PUSHGW = credentials('grafana-pushgw-url')
+    BUILD_TAG      = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+    COVERAGE_MIN   = '80'
+    PERF_P95_BUDGET_MS = '800'
+    PERF_ERR_BUDGET    = '0.01'
+  }
+
+  options {
+    timeout(time: 60, unit: 'MINUTES')
+    ansiColor('xterm')
+    timestamps()
+    buildDiscarder(logRotator(numToKeepStr: '30'))
+    disableConcurrentBuilds()
+  }
+
+  stages {
+
+    stage('Checkout') {
+      steps {
+        checkout scm
+        sh 'git rev-parse --short HEAD > .commit-sha'
+      }
+    }
+
+    stage('Lint & Static Analysis') {
+      parallel {
+        stage('JS / TS')  { steps { sh 'npm ci && npm run lint' } }
+        stage('Python')   { steps { sh 'ruff check tests/' } }
+        stage('Robot')    { steps { sh 'robocop --threshold W tests/' } }
+      }
+    }
+
+    stage('Unit Tests · JEST') {
+      steps {
+        sh 'npm run test:unit -- --ci --coverage --reporters=default --reporters=jest-junit'
+      }
+      post {
+        always {
+          junit 'reports/unit/*.xml'
+          publishHTML(target: [reportDir: 'reports/unit/lcov-report', reportFiles: 'index.html', reportName: 'JEST Coverage', keepAll: true])
+        }
+      }
+    }
+
+    stage('API Tests · Robot Framework') {
+      steps {
+        sh '''
+          robot --variable ENV:${TARGET_ENV} \
+                --outputdir reports/api \
+                --xunit api-results.xml \
+                tests/api/
+        '''
+      }
+      post {
+        always {
+          junit 'reports/api/api-results.xml'
+          archiveArtifacts artifacts: 'reports/api/**', allowEmptyArchive: true
+        }
+      }
+    }
+
+    stage('E2E · Playwright') {
+      when { expression { params.RUN_E2E } }
+      steps {
+        sh '''
+          npx playwright install --with-deps chromium
+          BASE_URL=https://${TARGET_ENV}.example.com \
+            npx playwright test --reporter=junit,html
+        '''
+      }
+      post {
+        always {
+          junit 'reports/e2e/*.xml'
+          publishHTML(target: [reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright Report', keepAll: true])
+        }
+      }
+    }
+
+    stage('Performance · k6') {
+      when { expression { params.RUN_PERF } }
+      steps {
+        sh '''
+          k6 run \
+             --env BASE_URL=https://${TARGET_ENV}.example.com \
+             --summary-export=reports/perf/summary.json \
+             tests/performance/load.js
+        '''
+        script {
+          def s   = readJSON file: 'reports/perf/summary.json'
+          def p95 = s.metrics.http_req_duration.values['p(95)']
+          def err = s.metrics.http_req_failed.values.rate
+
+          env.PERF_P95 = "${p95}"
+          env.PERF_ERR = "${err}"
+
+          if (p95 > env.PERF_P95_BUDGET_MS.toFloat()) {
+            error("Perf gate failed: p95 ${p95}ms > ${env.PERF_P95_BUDGET_MS}ms")
+          }
+          if (err > env.PERF_ERR_BUDGET.toFloat()) {
+            error("Perf gate failed: error rate ${err} > ${env.PERF_ERR_BUDGET}")
+          }
+        }
+      }
+    }
+
+    stage('Quality Gate') {
+      steps {
+        script {
+          def cov = sh(script: 'jq .total.lines.pct reports/unit/coverage-summary.json',
+                       returnStdout: true).trim() as Float
+          env.COVERAGE = "${cov}"
+          if (cov < env.COVERAGE_MIN.toFloat()) {
+            error("Coverage gate failed: ${cov}% < ${env.COVERAGE_MIN}%")
+          }
+        }
+      }
+    }
+
+    stage('Push Metrics → Grafana') {
+      steps {
+        sh '''
+          cat <<EOF | curl --data-binary @- ${GRAFANA_PUSHGW}/metrics/job/qa_pipeline/branch/${BRANCH_NAME}
+qa_build_number ${BUILD_NUMBER}
+qa_coverage_pct ${COVERAGE}
+qa_perf_p95_ms ${PERF_P95:-0}
+qa_perf_error_rate ${PERF_ERR:-0}
+EOF
+        '''
+      }
+    }
+  }
+
+  post {
+    success {
+      slackSend(channel: env.SLACK_CHANNEL, color: 'good',
+        message: ":white_check_mark: *${env.JOB_NAME}* #${env.BUILD_NUMBER} passed on `${params.TARGET_ENV}`\n" +
+                 "Coverage *${env.COVERAGE}%* · p95 *${env.PERF_P95}ms* · err *${env.PERF_ERR}*\n" +
+                 "<${env.BUILD_URL}|Open build>")
+    }
+    failure {
+      slackSend(channel: env.SLACK_CHANNEL, color: 'danger',
+        message: ":x: *${env.JOB_NAME}* #${env.BUILD_NUMBER} FAILED on `${params.TARGET_ENV}` — <${env.BUILD_URL}|investigate>")
+      emailext(
+        to: 'qa-leads@example.com',
+        subject: "[QA FAIL] ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+        body:    "Pipeline failed on ${params.TARGET_ENV}.\nSee ${env.BUILD_URL}console"
+      )
+    }
+    always { cleanWs() }
+  }
+}
