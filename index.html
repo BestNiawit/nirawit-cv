@@ -39,6 +39,12 @@
 
   <!-- Site overrides -->
   <style>
+    /* Soft scroll-snap on desktop — sections snap into view but tall sections (Portfolio, Featured) stay scrollable in the middle */
+    html { scroll-behavior: smooth; scroll-padding-top: 0; }
+    @media (min-width: 992px) {
+      body { scroll-snap-type: y proximity; }
+      section.section, section#hero { scroll-snap-align: start; }
+    }
     .writing-card:hover, .talk-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1) !important;
