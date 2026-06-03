@@ -844,16 +844,16 @@
     <section id="featured" class="featured section">
 
       <div class="container section-title" data-aos="fade-up">
-        <h2>Featured Build</h2>
-        <p>A deeper look at one harness I built and run in production — the kind of end-to-end shape an entire QA engagement can take.</p>
+        <h2>Featured Builds</h2>
+        <p>Two deeper looks at systems I built and run in production — the end-to-end shape a full QA engagement can take, both at the test-harness layer and at the team-workflow layer.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="featured-build">
 
-          <span class="build-eyebrow">CASE STUDY · PRODUCTION</span>
-          <h3 class="mb-1">iSingleForm Automation Harness</h3>
+          <span class="build-eyebrow">CASE STUDY · PRODUCTION HARNESS</span>
+          <h3 class="mb-1">Web/API Regression Harness · Multi-Channel Reporting</h3>
           <p class="mb-0" style="color:#cbd5e1;font-size:0.95em">
             Playwright + TypeScript regression suite with a Python-driven, multi-channel custom reporting pipeline.
             Raw test JSON in &rarr; Typst-compiled executive PDF, per-test PDFs with embedded screenshots, Discord embed,
@@ -928,6 +928,93 @@
             <span class="build-stack-chip">Discord Webhook</span>
             <span class="build-stack-chip">SMTP</span>
             <span class="build-stack-chip">Jinja-style templating</span>
+          </div>
+
+        </div>
+
+        <!-- Second Featured Build · AI Skills System -->
+        <div class="featured-build mt-4" data-aos="fade-up" data-aos-delay="200" style="background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #7c3aed 100%);">
+
+          <span class="build-eyebrow" style="background: rgba(251, 191, 36, 0.15); color: #fde68a">CASE STUDY · TEAM WORKFLOW</span>
+          <h3 class="mb-1">QA AI Skills System on Claude Code</h3>
+          <p class="mb-0" style="color:#e9d5ff;font-size:0.95em">
+            A team-wide AI workflow system, not a folder of prompts. 15 custom Claude Code Skills mapped to the QA SDP §5 process so the whole team
+            invokes the same context, output format, and quality rubric — instead of every QA running their own prompts in ChatGPT.
+            Documented openly in a 4-part Medium series (EP1 &rarr; EP4).
+          </p>
+
+          <!-- KPI row -->
+          <div class="build-stats">
+            <div class="build-stat"><div class="num">15</div><div class="lbl">custom AI Skills</div></div>
+            <div class="build-stat"><div class="num">12</div><div class="lbl">SDP processes covered</div></div>
+            <div class="build-stat"><div class="num">4</div><div class="lbl">EPs published on Medium</div></div>
+            <div class="build-stat"><div class="num">7+8</div><div class="lbl">core + supporting skills</div></div>
+          </div>
+
+          <!-- 3 pillars -->
+          <div class="row gy-4">
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+              <div class="build-pillar">
+                <div class="pillar-icon" style="background:rgba(251,191,36,0.15);color:#fbbf24"><i class="bi bi-diagram-3"></i></div>
+                <h4>Architecture</h4>
+                <ul>
+                  <li>Shipped as a Claude Code <strong>plugin</strong> — install once, every QA gets the same skill catalogue</li>
+                  <li>Each skill is a focused markdown file with prompt, scope, examples, and output format</li>
+                  <li>Skills compose: <em>requirement-analyzer</em> &rarr; <em>test-case-writer</em> &rarr; <em>test-case-reviewer</em></li>
+                  <li>Onboarding doc + Decision Tree + IO-flow diagrams so a new QA is productive in &lt; 1 hour</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+              <div class="build-pillar">
+                <div class="pillar-icon" style="background:rgba(251,191,36,0.15);color:#fbbf24"><i class="bi bi-list-check"></i></div>
+                <h4>Process Coverage</h4>
+                <ul>
+                  <li>Plan: test-plan-writer (SIT / UAT / Perf), test-matrix-generator</li>
+                  <li>Design: test-case-writer, data-type-matrix-generator, requirement-analyzer</li>
+                  <li>Review: test-case-reviewer (peer-review checklist)</li>
+                  <li>Execute: bug-report-writer, automation generators (Playwright + Robot Framework)</li>
+                  <li>Report: test-report-writer, perf-result-analyzer, perf-typst-report</li>
+                  <li>Ops: weekly-update-writer, handoff-writer</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="450">
+              <div class="build-pillar">
+                <div class="pillar-icon" style="background:rgba(251,191,36,0.15);color:#fbbf24"><i class="bi bi-cash-coin"></i></div>
+                <h4>Adoption &amp; Cost</h4>
+                <ul>
+                  <li>EP2 dug into <em>token cost</em> — skills get dynamic context, not the full prompt every call</li>
+                  <li>EP3: the skills that didn't survive — when AI is the wrong tool (effort estimates, for one)</li>
+                  <li>EP4: opening the lid on how a skill is actually structured internally</li>
+                  <li>Same skill catalogue runs across sprints — no more "everyone has their own prompt"</li>
+                  <li>Quoted by team in PR reviews + sprint planning, not just ad-hoc usage</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Stack chips -->
+          <div class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="font-size:0.78em;color:#c4b5fd;letter-spacing:1px;font-weight:600;margin-bottom:8px">STACK</div>
+            <span class="build-stack-chip">Claude Code</span>
+            <span class="build-stack-chip">Claude Code Skills</span>
+            <span class="build-stack-chip">Claude Code Plugin</span>
+            <span class="build-stack-chip">Markdown</span>
+            <span class="build-stack-chip">Bash</span>
+            <span class="build-stack-chip">SDP §5 mapping</span>
+            <span class="build-stack-chip">Token-aware design</span>
+          </div>
+
+          <!-- Read the series CTA -->
+          <div class="mt-3 text-center">
+            <a href="#writing" style="display:inline-block;padding:8px 18px;border-radius:50px;background:rgba(251,191,36,0.15);color:#fde68a;text-decoration:none;font-weight:600;font-size:0.9em;border:1px solid rgba(251,191,36,0.35)">
+              <i class="bi bi-journal-text me-1"></i> Read the 4-part series &rarr;
+            </a>
           </div>
 
         </div>
