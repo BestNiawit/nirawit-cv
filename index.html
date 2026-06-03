@@ -237,6 +237,18 @@
       display: block; font-weight: 500; font-size: 0.72em;
       color: #94a3b8; letter-spacing: 0.3px;
     }
+    /* Resume project chips (Doppio client engagements + similar) */
+    .proj-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+    .proj-chip {
+      display: inline-block; padding: 4px 11px; border-radius: 50px;
+      background: #eef2ff; color: #1e40af;
+      font-size: 0.78em; font-weight: 600; line-height: 1.5;
+      border: 1px solid #c7d2fe;
+    }
+    .proj-chip-label {
+      font-size: 0.82em; font-weight: 600; color: #475569;
+      margin: 12px 0 4px;
+    }
     /* Methodology stages */
     .stage-card {
       background: #fff; border-radius: 14px; padding: 28px 24px;
@@ -560,57 +572,42 @@
     <section id="brands" class="brands section">
 
       <div class="container section-title" data-aos="fade-up">
-        <h2>Worked With</h2>
-        <p>Engagements over the past 5+ years across banking, fintech, e-commerce, and SaaS · through direct employment and consultancy assignments.</p>
+        <h2>Worked At</h2>
+        <p>Five direct employers across 5+ years · QA roles ranging from Software Tester to QA Lead. Consultancy clients via Doppio listed in the Resume below.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-3 justify-content-center">
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#0ea5e9">
+          <div class="col-12 col-sm-6 col-md-4 col-lg"><div class="brand-tile" style="border-top-color:#475569">
+            <div class="brand-name bt-magicbox">Magicbox</div>
+            <small>Software Tester · 2020 · 22</small>
+          </div></div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg"><div class="brand-tile" style="border-top-color:#6366f1">
+            <div class="brand-name bt-doppio">Doppio Tech</div>
+            <small>QA Automation → Senior · 2022 · 25</small>
+          </div></div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg"><div class="brand-tile" style="border-top-color:#0ea5e9">
             <div class="brand-name bt-ttb">ttb</div>
-            <small>Test Engineer</small>
+            <small>Test Engineer · 2023 · 24</small>
           </div></div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#fbbf24">
-            <div class="brand-name bt-krungsri">krungsri</div>
-            <small>Nimble KMA app</small>
-          </div></div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#7c3aed">
-            <div class="brand-name bt-scbx">SCBX · CardX</div>
-            <small>End-to-end automation</small>
-          </div></div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#f97316">
-            <div class="brand-name bt-scg">SCG Digital</div>
-            <small>Automation training</small>
-          </div></div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#dc2626">
-            <div class="brand-name bt-gosoft">Gosoft</div>
-            <small>QA team lead</small>
-          </div></div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#10b981">
+          <div class="col-12 col-sm-6 col-md-4 col-lg"><div class="brand-tile" style="border-top-color:#10b981">
             <div class="brand-name bt-fastwork">fastwork</div>
-            <small>QA Engineer</small>
+            <small>QA Engineer · 2025 · 26</small>
           </div></div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#149ddd">
+          <div class="col-12 col-sm-6 col-md-4 col-lg"><div class="brand-tile" style="border-top-color:#149ddd">
             <div class="brand-name bt-ayodia">Ayodia</div>
             <small>QA Lead · current</small>
-          </div></div>
-
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#6366f1">
-            <div class="brand-name bt-doppio">Doppio Tech</div>
-            <small>Senior QA Automation</small>
           </div></div>
 
         </div>
 
         <p class="text-center mt-4 mb-0" style="color:#888;font-size:0.85em">
-          Direct engagements plus consultancy via Doppio Tech (CardX, Krungsri, SCG, Gosoft).
+          9 client engagements at Doppio (CardX, Nimble KMA, The One Card, CDS, Top Online, Makro Click, Office Mate, Gosoft, SCG Digital). Details in <a href="#resume" style="color:#149ddd;font-weight:600">Resume</a>.
         </p>
       </div>
 
@@ -871,7 +868,7 @@
 
             <div class="resume-item">
               <h4>Quality Assurance Lead</h4>
-              <h5>March 2026 – Present</h5>
+              <h5>March 2026 ·Present</h5>
               <p><em>Ayodia Company · Bangkok, Thailand</em></p>
               <ul>
                 <li><strong>First QA Lead in the org.</strong> Set up the QA function from zero (processes, standards, team workflow).</li>
@@ -884,7 +881,7 @@
 
             <div class="resume-item">
               <h4>QA Engineer</h4>
-              <h5>November 2025 – March 2026</h5>
+              <h5>November 2025 ·March 2026</h5>
               <p><em>Fastwork HQ · Bangkok, Thailand</em></p>
               <ul>
                 <li>Owned QA across manual, automation, and performance for the Fastwork platform and CMS.</li>
@@ -895,19 +892,30 @@
 
             <div class="resume-item">
               <h4>Senior QA Automation Engineer</h4>
-              <h5>April 2024 – November 2025</h5>
+              <h5>April 2024 · November 2025</h5>
               <p><em>Doppio Tech Co., Ltd. · Bangkok, Thailand</em></p>
               <ul>
                 <li>Led multi-project QA teams across Web, Mobile, API, and Backend with 1:1 mentoring and coaching.</li>
                 <li>Built automation frameworks with Jenkins, Selenium WebDriver, Appium.</li>
                 <li>Designed custom pipeline dashboards and MR rejected summary reports.</li>
-                <li>Key projects: <strong>CardX (SCBX), Nimble KMA (Krungsri), Gosoft, SCG Digital</strong>.</li>
               </ul>
+              <div class="proj-chip-label">Client engagements via Doppio (Web · Mobile · API automation):</div>
+              <div class="proj-chips">
+                <span class="proj-chip">CardX · SCBX</span>
+                <span class="proj-chip">Nimble KMA · Krungsri</span>
+                <span class="proj-chip">The 1 Card</span>
+                <span class="proj-chip">CDS · Central</span>
+                <span class="proj-chip">Tops Online</span>
+                <span class="proj-chip">Makro Click</span>
+                <span class="proj-chip">OfficeMate</span>
+                <span class="proj-chip">Gosoft</span>
+                <span class="proj-chip">SCG Digital</span>
+              </div>
             </div><!-- End Resume Item -->
 
             <div class="resume-item">
               <h4>Test Engineer</h4>
-              <h5>April 2023 – April 2024</h5>
+              <h5>April 2023 ·April 2024</h5>
               <p><em>TMBThanachart Bank (ttb) · Bangkok, Thailand</em></p>
               <ul>
                 <li>Led automation testing across Web, Mobile, API, and Core Banking systems.</li>
@@ -918,7 +926,7 @@
 
             <div class="resume-item">
               <h4>QA Automation Engineer</h4>
-              <h5>June 2022 – June 2023</h5>
+              <h5>June 2022 ·June 2023</h5>
               <p><em>Doppio Tech Co., Ltd. · Bangkok, Thailand</em></p>
               <ul>
                 <li>Automation for Web, Mobile, and API using Selenium WebDriver and Appium.</li>
@@ -927,7 +935,7 @@
 
             <div class="resume-item">
               <h4>Software Tester</h4>
-              <h5>August 2020 – May 2022</h5>
+              <h5>August 2020 ·May 2022</h5>
               <p><em>Magicbox Solution Co., Ltd. · Bangkok, Thailand</em></p>
               <ul>
                 <li>Manual testing, defect logging, Agile sprint participation, and test documentation.</li>
@@ -1449,7 +1457,7 @@
             <div class="talk-card h-100 p-4" style="background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s, box-shadow .2s">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge px-3 py-2" style="background:#f97316;color:#fff;font-size:0.75em;letter-spacing:1px">TRAINING</span>
-                <span style="font-size:0.85em;color:#888">2024 – 2025</span>
+                <span style="font-size:0.85em;color:#888">2024 ·2025</span>
               </div>
               <h4 class="mb-2" style="font-weight:700;line-height:1.4;color:#222">Web Automation Bootcamp</h4>
               <div class="mb-3" style="color:#149ddd;font-weight:600;font-size:0.9em">SCG Digital · Corporate Training</div>
@@ -1475,7 +1483,7 @@
             <div class="talk-card h-100 p-4" style="background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s, box-shadow .2s">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge px-3 py-2" style="background:#10b981;color:#fff;font-size:0.75em;letter-spacing:1px">GUEST LECTURE</span>
-                <span style="font-size:0.85em;color:#888">2025 – 2026</span>
+                <span style="font-size:0.85em;color:#888">2025 ·2026</span>
               </div>
               <h4 class="mb-2" style="font-weight:700;line-height:1.4;color:#222">QA &amp; Test Automation in Industry</h4>
               <div class="mb-3" style="color:#149ddd;font-weight:600;font-size:0.9em">KMUTT · RMUTP · Alumni Lecture</div>
