@@ -10,16 +10,22 @@ function at Ayodia.
 
 ```text
 .
-├── index.html                       # the site
-├── assets/                          # CSS, JS, favicon, CV PDF
-│   ├── css/style.css
-│   ├── js/main.js
-│   └── favicon.svg
-├── pipelines/                       # portfolio: sample QA pipeline I author
-│   ├── Jenkinsfile                  #   full Jenkins pipeline
-│   └── README.md                    #   what it demonstrates
-└── wrangler.jsonc                   # Cloudflare Workers static-asset config
+├── index.html                                 # the site
+├── assets/
+│   ├── css/main.css                           # MyResume template (BootstrapMade)
+│   ├── js/main.js                             # template JS
+│   ├── vendor/                                # Bootstrap 5, AOS, Swiper, GLightbox, Isotope, etc.
+│   ├── img/                                   # profile-img.jpg + portfolio thumbs
+│   ├── favicon.svg                            # custom SVG favicon
+│   └── Nirawit_Thepsawade_CV_2026.pdf         # downloadable CV
+├── pipelines/                                 # portfolio: sample QA pipeline I author
+│   ├── Jenkinsfile                            #   full Jenkins pipeline
+│   └── README.md                              #   what it demonstrates
+└── wrangler.jsonc                             # Cloudflare Workers static-asset config
 ```
+
+Built on the [MyResume](https://bootstrapmade.com/free-html-bootstrap-template-my-resume/)
+template by BootstrapMade (Bootstrap 5.3.3).
 
 ## Deploy
 

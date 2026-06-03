@@ -13,3 +13,16 @@ package-lock.json
 .DS_Store
 .vscode/
 .idea/
+# Template artefacts not used in this site
+forms/
+*.php
+*.scss
+assets/scss/
+# Pipelines folder is portfolio source — not served
+pipelines/
+# wrangler runtime files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
