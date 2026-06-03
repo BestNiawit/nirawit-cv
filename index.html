@@ -259,6 +259,96 @@
         font-size: 1.6em; color: #cbd5e1;
       }
     }
+    /* Find Your Fit interactive */
+    .fit-card {
+      background: #fff; border-radius: 16px; padding: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      border: 1px solid #eef2f7;
+    }
+    .fit-tabs {
+      display: flex; gap: 6px; margin-bottom: 24px;
+      background: #f1f5f9; padding: 5px; border-radius: 50px;
+      max-width: 440px; margin-left: auto; margin-right: auto;
+    }
+    .fit-tab {
+      flex: 1; padding: 10px 18px; border-radius: 50px;
+      border: none; background: transparent;
+      font-weight: 600; font-size: 0.9em; color: #64748b;
+      cursor: pointer; transition: all .2s;
+    }
+    .fit-tab.active { background: #fff; color: #149ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .fit-tab:not(.active):hover { color: #1e40af; }
+    .fit-panel { display: none; }
+    .fit-panel.active { display: block; }
+    .fit-q { margin-bottom: 22px; }
+    .fit-q .q-label { font-weight: 600; color: #1e293b; margin-bottom: 10px; font-size: 0.95em; }
+    .fit-q .q-hint { font-size: 0.78em; color: #94a3b8; font-weight: 400; margin-left: 6px; }
+    .fit-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .fit-opt {
+      padding: 7px 14px; border-radius: 50px;
+      border: 1.5px solid #e2e8f0; background: #fff;
+      font-size: 0.85em; font-weight: 500; color: #475569;
+      cursor: pointer; transition: all .15s; user-select: none;
+    }
+    .fit-opt:hover { border-color: #149ddd; color: #149ddd; }
+    .fit-opt.selected { background: #149ddd; color: #fff; border-color: #149ddd; }
+    .fit-jd-textarea {
+      width: 100%; min-height: 180px; padding: 14px;
+      border: 1.5px solid #e2e8f0; border-radius: 10px;
+      font-family: inherit; font-size: 0.92em; line-height: 1.55;
+      resize: vertical;
+    }
+    .fit-jd-textarea:focus { outline: none; border-color: #149ddd; box-shadow: 0 0 0 3px rgba(20,157,221,0.15); }
+    .fit-submit {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 50px;
+      background: linear-gradient(135deg, #149ddd, #1e40af);
+      color: #fff; font-weight: 600; border: none; cursor: pointer;
+      transition: all .2s; box-shadow: 0 6px 18px rgba(20,157,221,0.3);
+      margin-top: 14px;
+    }
+    .fit-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(20,157,221,0.4); }
+    .fit-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .fit-result {
+      display: none; margin-top: 28px; padding: 28px;
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+      border-radius: 14px; border: 1px solid #e2e8f0;
+    }
+    .fit-result.show { display: block; animation: fadein 0.4s ease; }
+    @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .fit-score-wrap {
+      display: flex; align-items: center; gap: 22px;
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .fit-score {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: conic-gradient(#149ddd var(--pct, 0%), #e2e8f0 0);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; flex-shrink: 0;
+    }
+    .fit-score::before {
+      content: ""; position: absolute; inset: 8px;
+      background: #fff; border-radius: 50%;
+    }
+    .fit-score-num { position: relative; font-size: 1.8em; font-weight: 800; color: #149ddd; }
+    .fit-verdict h4 { font-weight: 700; color: #1e293b; margin: 0 0 6px; font-size: 1.2em; }
+    .fit-verdict p { color: #475569; margin: 0; line-height: 1.55; }
+    .fit-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+    .fit-chip {
+      padding: 4px 12px; border-radius: 50px;
+      background: rgba(20,157,221,0.1); color: #1e40af;
+      font-size: 0.78em; font-weight: 600;
+    }
+    .fit-chip.dim { background: #f1f5f9; color: #94a3b8; font-weight: 500; }
+    .fit-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .fit-actions a {
+      padding: 10px 18px; border-radius: 50px;
+      font-weight: 600; font-size: 0.88em; text-decoration: none;
+    }
+    .fit-actions .primary { background: #149ddd; color: #fff; }
+    .fit-actions .primary:hover { background: #1e40af; }
+    .fit-actions .outline { background: transparent; color: #149ddd; border: 1.5px solid #149ddd; }
+    .fit-actions .outline:hover { background: rgba(20,157,221,0.08); }
     /* Scroll progress bar — thin accent strip at the top of the viewport */
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0;
@@ -319,6 +409,7 @@
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
         <li><a href="#featured"><i class="bi bi-stars navicon"></i><span>Featured</span></a></li>
         <li><a href="#methodology"><i class="bi bi-diagram-3 navicon"></i><span>Method</span></a></li>
+        <li><a href="#fit"><i class="bi bi-bullseye navicon"></i><span>Fit</span></a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
         <li><a href="#talks"><i class="bi bi-mic navicon"></i><span>Talks</span></a></li>
         <li><a href="#writing"><i class="bi bi-pencil-square navicon"></i><span>Writing</span></a></li>
@@ -1216,6 +1307,129 @@
 
     </section><!-- /Methodology Section -->
 
+    <!-- Find Your Fit Section -->
+    <section id="fit" class="fit section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Find Your Fit</h2>
+        <p>Tell me what you're hiring for — or paste a job description — and I'll show you how my profile maps to your needs. Runs entirely in your browser, no data sent anywhere.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="fit-card">
+
+          <div class="fit-tabs" role="tablist">
+            <button class="fit-tab active" data-tab="quiz" role="tab">Quick Quiz</button>
+            <button class="fit-tab" data-tab="jd" role="tab">Paste a JD</button>
+          </div>
+
+          <!-- Quiz panel -->
+          <div class="fit-panel active" id="fit-panel-quiz">
+
+            <div class="fit-q">
+              <div class="q-label">1. Role you're hiring for? <span class="q-hint">(pick one)</span></div>
+              <div class="fit-options" data-q="role" data-multi="false">
+                <span class="fit-opt" data-val="qa-lead">QA Lead</span>
+                <span class="fit-opt" data-val="senior-qa">Senior QA</span>
+                <span class="fit-opt" data-val="qa-engineer">QA Engineer</span>
+                <span class="fit-opt" data-val="automation">Automation Engineer</span>
+                <span class="fit-opt" data-val="sdet">SDET / Test Engineer</span>
+                <span class="fit-opt" data-val="perf">Performance Engineer</span>
+              </div>
+            </div>
+
+            <div class="fit-q">
+              <div class="q-label">2. Platforms in scope? <span class="q-hint">(pick all that apply)</span></div>
+              <div class="fit-options" data-q="platforms" data-multi="true">
+                <span class="fit-opt" data-val="web">Web</span>
+                <span class="fit-opt" data-val="api">API</span>
+                <span class="fit-opt" data-val="mobile">Mobile</span>
+                <span class="fit-opt" data-val="pos">POS</span>
+                <span class="fit-opt" data-val="banking">Core Banking</span>
+                <span class="fit-opt" data-val="perf">Performance / Load</span>
+              </div>
+            </div>
+
+            <div class="fit-q">
+              <div class="q-label">3. Stack your team prefers? <span class="q-hint">(pick all that apply)</span></div>
+              <div class="fit-options" data-q="stack" data-multi="true">
+                <span class="fit-opt" data-val="robot">Robot Framework</span>
+                <span class="fit-opt" data-val="playwright">Playwright</span>
+                <span class="fit-opt" data-val="selenium">Selenium</span>
+                <span class="fit-opt" data-val="appium">Appium</span>
+                <span class="fit-opt" data-val="jest">JEST</span>
+                <span class="fit-opt" data-val="jmeter">JMeter</span>
+                <span class="fit-opt" data-val="k6">k6</span>
+                <span class="fit-opt" data-val="cypress">Cypress</span>
+                <span class="fit-opt" data-val="webdriverio">WebdriverIO</span>
+              </div>
+            </div>
+
+            <div class="fit-q">
+              <div class="q-label">4. How important is AI-assisted QA? <span class="q-hint">(pick one)</span></div>
+              <div class="fit-options" data-q="ai" data-multi="false">
+                <span class="fit-opt" data-val="essential">Essential</span>
+                <span class="fit-opt" data-val="nice">Nice-to-have</span>
+                <span class="fit-opt" data-val="none">Not relevant</span>
+              </div>
+            </div>
+
+            <div class="fit-q">
+              <div class="q-label">5. Engagement type? <span class="q-hint">(pick one)</span></div>
+              <div class="fit-options" data-q="engagement" data-multi="false">
+                <span class="fit-opt" data-val="fulltime">Full-time</span>
+                <span class="fit-opt" data-val="contract">Contract</span>
+                <span class="fit-opt" data-val="fractional">Fractional</span>
+                <span class="fit-opt" data-val="project">Project-based</span>
+              </div>
+            </div>
+
+            <button class="fit-submit" id="fit-quiz-submit" disabled>
+              <i class="bi bi-calculator"></i> Calculate fit
+            </button>
+            <small style="display:block;margin-top:8px;color:#94a3b8;font-size:0.8em">Answer all 5 questions to enable.</small>
+
+          </div>
+
+          <!-- JD Matcher panel -->
+          <div class="fit-panel" id="fit-panel-jd">
+            <div class="fit-q">
+              <div class="q-label">Paste a job description <span class="q-hint">(plain text, any language — keyword scan only)</span></div>
+              <textarea class="fit-jd-textarea" id="fit-jd-text" placeholder="Paste the JD here. Example: &quot;We are looking for a Senior QA Engineer with 5+ years of automation experience. Required: Playwright or Selenium, REST API testing, CI/CD with Jenkins or GitLab. Nice to have: performance testing with JMeter, mobile automation, exposure to AI tooling…&quot;"></textarea>
+            </div>
+            <button class="fit-submit" id="fit-jd-submit">
+              <i class="bi bi-search"></i> Scan JD &amp; match
+            </button>
+            <small style="display:block;margin-top:8px;color:#94a3b8;font-size:0.8em">100% client-side — your JD never leaves your browser.</small>
+          </div>
+
+          <!-- Shared result panel -->
+          <div class="fit-result" id="fit-result">
+            <div class="fit-score-wrap">
+              <div class="fit-score" id="fit-score"><span class="fit-score-num" id="fit-score-num">0%</span></div>
+              <div class="fit-verdict">
+                <h4 id="fit-verdict-title">Strong fit</h4>
+                <p id="fit-verdict-desc"></p>
+              </div>
+            </div>
+            <div id="fit-matched-label" style="font-size:0.85em;font-weight:600;color:#64748b;margin-bottom:6px">Matched in my profile:</div>
+            <div class="fit-chips" id="fit-matched"></div>
+            <div id="fit-missing-wrap" style="display:none">
+              <div style="font-size:0.85em;font-weight:600;color:#64748b;margin:14px 0 6px">Not core to my stack (we can talk):</div>
+              <div class="fit-chips" id="fit-missing"></div>
+            </div>
+            <div class="fit-actions">
+              <a href="#contact" class="primary"><i class="bi bi-send"></i> Let's talk</a>
+              <a href="#featured" class="outline">See Featured Builds</a>
+              <a href="assets/Nirawit_Thepsawade_CV_2026.pdf" download class="outline"><i class="bi bi-download"></i> CV PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Find Your Fit Section -->
+
     <!-- Services Section -->
     <section id="services" class="services section">
 
@@ -1611,6 +1825,176 @@
       window.addEventListener('resize', update);
       update();
     })();
+  </script>
+
+  <!-- Find Your Fit · interactive scorer (client-side only) -->
+  <script>
+  (function() {
+    var quizState = { role: null, platforms: [], stack: [], ai: null, engagement: null };
+
+    var profile = {
+      roleScores: { 'qa-lead': 100, 'senior-qa': 96, 'qa-engineer': 88, 'automation': 95, 'sdet': 92, 'perf': 78 },
+      platforms: ['web','api','mobile','pos','banking','perf'],
+      stackStrong: ['robot','playwright','selenium','appium','jest','jmeter','k6'],
+      stackOther: ['cypress','webdriverio'],
+      aiBonus: { essential: 25, nice: 14, none: 0 }
+    };
+
+    document.querySelectorAll('.fit-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = btn.dataset.tab;
+        document.querySelectorAll('.fit-tab').forEach(function(b){ b.classList.toggle('active', b === btn); });
+        document.querySelectorAll('.fit-panel').forEach(function(p){ p.classList.toggle('active', p.id === 'fit-panel-' + tab); });
+        document.getElementById('fit-result').classList.remove('show');
+      });
+    });
+
+    document.querySelectorAll('.fit-options').forEach(function(group) {
+      var multi = group.dataset.multi === 'true';
+      var q = group.dataset.q;
+      group.querySelectorAll('.fit-opt').forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          if (multi) {
+            opt.classList.toggle('selected');
+            quizState[q] = Array.from(group.querySelectorAll('.fit-opt.selected')).map(function(o){ return o.dataset.val; });
+          } else {
+            group.querySelectorAll('.fit-opt').forEach(function(o){ o.classList.remove('selected'); });
+            opt.classList.add('selected');
+            quizState[q] = opt.dataset.val;
+          }
+          updateQuizEnabled();
+        });
+      });
+    });
+
+    function updateQuizEnabled() {
+      var done = quizState.role && quizState.platforms.length > 0 && quizState.stack.length > 0 && quizState.ai && quizState.engagement;
+      document.getElementById('fit-quiz-submit').disabled = !done;
+    }
+
+    document.getElementById('fit-quiz-submit').addEventListener('click', function() {
+      var baseRole = profile.roleScores[quizState.role] || 60;
+      var platMatch = quizState.platforms.filter(function(p){ return profile.platforms.indexOf(p) >= 0; });
+      var platPct = quizState.platforms.length > 0 ? platMatch.length / quizState.platforms.length : 0;
+      var stackPoints = 0;
+      var stackMatched = [];
+      var stackMissing = [];
+      quizState.stack.forEach(function(s) {
+        if (profile.stackStrong.indexOf(s) >= 0) { stackPoints += 1.0; stackMatched.push(s); }
+        else if (profile.stackOther.indexOf(s) >= 0) { stackPoints += 0.5; stackMatched.push(s); }
+        else { stackMissing.push(s); }
+      });
+      var stackPct = quizState.stack.length > 0 ? stackPoints / quizState.stack.length : 0;
+      var aiBonus = profile.aiBonus[quizState.ai] || 0;
+      // composite: role 35% + platforms 25% + stack 25% + ai 15%
+      var raw = (baseRole * 0.35) + (platPct * 100 * 0.25) + (stackPct * 100 * 0.25) + (aiBonus * 0.6);
+      var pct = Math.max(20, Math.min(99, Math.round(raw)));
+      showResult(pct, { matched: platMatch.concat(stackMatched), missing: stackMissing });
+    });
+
+    var KW = {
+      high: ['robot framework','playwright','selenium','appium','jmeter','k6','jenkins','gitlab ci','gitlab','github actions','jira','mongodb','mysql','python','typescript','javascript','qa lead','senior qa','sdet','automation engineer','test engineer','ci/cd','cicd','regression','performance test','load test','core banking','mobile testing','api test','rest api','end-to-end','e2e','typst'],
+      medium: ['agile','scrum','kanban','sprint','jest','postman','manual test','uat','test case','test plan','defect','bug tracking','page object','pom','dbeaver','cross-browser','cross browser','browser test','web test','bitbucket','grafana'],
+      bonus: ['ai','claude','chatgpt','llm','ai-assisted','ai assisted','machine learning','workflow automation','generative ai','ai skill']
+    };
+
+    document.getElementById('fit-jd-submit').addEventListener('click', function() {
+      var jd = (document.getElementById('fit-jd-text').value || '').toLowerCase();
+      if (!jd.trim()) { alert('Paste a JD first.'); return; }
+      var points = 0, matched = [];
+      function scan(list, w) {
+        list.forEach(function(kw) {
+          if (jd.indexOf(kw) >= 0) {
+            points += w;
+            if (matched.indexOf(kw) < 0) matched.push(kw);
+          }
+        });
+      }
+      scan(KW.high, 3);
+      scan(KW.medium, 1.5);
+      scan(KW.bonus, 5);
+      var pct = Math.min(95, Math.round((points / 50) * 100));
+      pct = Math.max(20, pct);
+      showResult(pct, { matched: matched, missing: [] });
+    });
+
+    function showResult(pct, hits) {
+      var resultBox = document.getElementById('fit-result');
+      var scoreEl = document.getElementById('fit-score');
+      var numEl = document.getElementById('fit-score-num');
+      var titleEl = document.getElementById('fit-verdict-title');
+      var descEl = document.getElementById('fit-verdict-desc');
+      var matchedEl = document.getElementById('fit-matched');
+      var missingWrap = document.getElementById('fit-missing-wrap');
+      var missingEl = document.getElementById('fit-missing');
+
+      var current = 0;
+      numEl.textContent = '0%';
+      scoreEl.style.setProperty('--pct', '0%');
+      var anim = setInterval(function() {
+        current += 2;
+        if (current >= pct) { current = pct; clearInterval(anim); }
+        numEl.textContent = current + '%';
+        scoreEl.style.setProperty('--pct', current + '%');
+      }, 18);
+
+      if (pct >= 85) {
+        titleEl.textContent = 'Strong fit';
+        descEl.textContent = "We're well aligned. Featured Builds and Resume are where the depth lives — start there.";
+      } else if (pct >= 70) {
+        titleEl.textContent = 'Good fit';
+        descEl.textContent = 'Solid overlap on the core. Portfolio and Services cover the engagement shape that would work.';
+      } else if (pct >= 50) {
+        titleEl.textContent = 'Partial fit';
+        descEl.textContent = 'Some overlap — worth a quick chat to see if the gap is bridgeable or a deal-breaker.';
+      } else {
+        titleEl.textContent = 'Different focus';
+        descEl.textContent = "Not my core wheelhouse — but I'm honest about it. Drop a line if you'd like a referral.";
+      }
+
+      matchedEl.innerHTML = '';
+      if (!hits.matched || hits.matched.length === 0) {
+        matchedEl.innerHTML = '<span class="fit-chip dim">No specific keywords matched — but core QA skills cover most JDs.</span>';
+      } else {
+        hits.matched.slice(0, 24).forEach(function(k) {
+          var chip = document.createElement('span');
+          chip.className = 'fit-chip';
+          chip.textContent = prettify(k);
+          matchedEl.appendChild(chip);
+        });
+      }
+
+      if (hits.missing && hits.missing.length > 0) {
+        missingWrap.style.display = 'block';
+        missingEl.innerHTML = '';
+        hits.missing.forEach(function(k) {
+          var chip = document.createElement('span');
+          chip.className = 'fit-chip dim';
+          chip.textContent = prettify(k);
+          missingEl.appendChild(chip);
+        });
+      } else {
+        missingWrap.style.display = 'none';
+      }
+
+      resultBox.classList.add('show');
+      setTimeout(function() { resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 80);
+    }
+
+    function prettify(kw) {
+      var map = {
+        'robot': 'Robot Framework', 'playwright': 'Playwright', 'selenium': 'Selenium', 'appium': 'Appium',
+        'jest': 'JEST', 'jmeter': 'JMeter', 'k6': 'k6', 'cypress': 'Cypress', 'webdriverio': 'WebdriverIO',
+        'web': 'Web', 'api': 'API', 'mobile': 'Mobile', 'pos': 'POS', 'banking': 'Core Banking', 'perf': 'Performance',
+        'ci/cd': 'CI/CD', 'cicd': 'CI/CD', 'e2e': 'E2E', 'rest api': 'REST API',
+        'pom': 'POM', 'sdet': 'SDET', 'qa lead': 'QA Lead', 'senior qa': 'Senior QA',
+        'ai': 'AI', 'llm': 'LLM', 'ai-assisted': 'AI-assisted', 'ai assisted': 'AI-assisted',
+        'mongodb': 'MongoDB', 'mysql': 'MySQL', 'gitlab ci': 'GitLab CI', 'github actions': 'GitHub Actions'
+      };
+      if (map[kw]) return map[kw];
+      return kw.replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+    }
+  })();
   </script>
 
 </body>
