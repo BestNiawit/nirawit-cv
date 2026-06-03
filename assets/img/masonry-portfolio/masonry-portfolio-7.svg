@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Decorative glow -->
+  <circle cx="400" cy="300" r="350" fill="url(#glow)"/>
+
+  <!-- Decorative geometry: dots grid -->
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="60" cy="60" r="2"/>
+    <circle cx="120" cy="60" r="2"/>
+    <circle cx="180" cy="60" r="2"/>
+    <circle cx="60" cy="120" r="2"/>
+    <circle cx="120" cy="120" r="2"/>
+    <circle cx="60" cy="180" r="2"/>
+    <circle cx="740" cy="540" r="2"/>
+    <circle cx="680" cy="540" r="2"/>
+    <circle cx="620" cy="540" r="2"/>
+    <circle cx="740" cy="480" r="2"/>
+    <circle cx="680" cy="480" r="2"/>
+    <circle cx="740" cy="420" r="2"/>
+  </g>
+
+  <!-- Decorative connecting lines (abstract network) -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.12" fill="none">
+    <path d="M 80 500 Q 250 420 400 500 T 720 480"/>
+    <path d="M 50 150 Q 200 100 380 160 T 750 120"/>
+    <circle cx="80" cy="500" r="4" fill="#ffffff" opacity="0.5" stroke="none"/>
+    <circle cx="750" cy="120" r="4" fill="#ffffff" opacity="0.5" stroke="none"/>
+    <circle cx="50" cy="150" r="3" fill="#ffffff" opacity="0.4" stroke="none"/>
+    <circle cx="720" cy="480" r="3" fill="#ffffff" opacity="0.4" stroke="none"/>
+  </g>
+
+  <!-- Large faded circles for depth -->
+  <circle cx="700" cy="100" r="80" fill="#ffffff" opacity="0.05"/>
+  <circle cx="100" cy="520" r="100" fill="#ffffff" opacity="0.05"/>
+
+  <!-- Icon: People connected / Leadership (centered around x=400, y=200) -->
+  <g filter="url(#dropShadow)">
+    <!-- Connection lines between people -->
+    <g stroke="#ffffff" stroke-width="2" opacity="0.55" fill="none" stroke-linecap="round">
+      <line x1="400" y1="160" x2="340" y2="235"/>
+      <line x1="400" y1="160" x2="460" y2="235"/>
+      <line x1="340" y1="235" x2="460" y2="235"/>
+    </g>
+
+    <!-- Leader (top, with crown accent) -->
+    <g>
+      <!-- Crown / star above leader -->
+      <path d="M 388 128 L 393 138 L 400 130 L 407 138 L 412 128 L 410 145 L 390 145 Z" fill="#ffffff" opacity="0.9"/>
+      <!-- Head -->
+      <circle cx="400" cy="160" r="20" fill="#ffffff"/>
+      <!-- Body -->
+      <path d="M 370 215 Q 370 188 400 188 Q 430 188 430 215 L 430 230 L 370 230 Z" fill="#ffffff"/>
+    </g>
+
+    <!-- Left team member -->
+    <g opacity="0.92">
+      <circle cx="340" cy="235" r="16" fill="#ffffff"/>
+      <path d="M 316 280 Q 316 258 340 258 Q 364 258 364 280 L 364 292 L 316 292 Z" fill="#ffffff"/>
+    </g>
+
+    <!-- Right team member -->
+    <g opacity="0.92">
+      <circle cx="460" cy="235" r="16" fill="#ffffff"/>
+      <path d="M 436 280 Q 436 258 460 258 Q 484 258 484 280 L 484 292 L 436 292 Z" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="395" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="64" text-anchor="middle" filter="url(#dropShadow)" letter-spacing="-1">Gosoft</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="440" fill="#ffffff" fill-opacity="0.85" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="22" text-anchor="middle">QA Team Lead</text>
+
+  <!-- Accent line -->
+  <line x1="360" y1="465" x2="440" y2="465" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Small badge below -->
+  <g transform="translate(400, 500)">
+    <rect x="-70" y="-16" width="140" height="32" rx="16" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1"/>
+    <circle cx="-48" cy="0" r="3" fill="#ffffff"/>
+    <text x="8" y="5" fill="#ffffff" fill-opacity="0.95" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="13" text-anchor="middle" letter-spacing="1.5">LEADERSHIP</text>
+  </g>
+</svg>

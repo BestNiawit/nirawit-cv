@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="dotGrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Dot grid overlay -->
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+
+  <!-- Decorative geometry: large soft circles -->
+  <circle cx="80" cy="80" r="180" fill="#ffffff" fill-opacity="0.06"/>
+  <circle cx="720" cy="540" r="220" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="700" cy="120" r="60" fill="#ffffff" fill-opacity="0.08"/>
+
+  <!-- Decorative abstract wave/lines -->
+  <path d="M 0 460 Q 200 420 400 460 T 800 460" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" fill="none"/>
+  <path d="M 0 490 Q 200 450 400 490 T 800 490" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2" fill="none"/>
+  <path d="M 0 520 Q 200 480 400 520 T 800 520" stroke="#ffffff" stroke-opacity="0.07" stroke-width="2" fill="none"/>
+
+  <!-- Small decorative dots -->
+  <circle cx="120" cy="450" r="3" fill="#ffffff" fill-opacity="0.4"/>
+  <circle cx="680" cy="220" r="3" fill="#ffffff" fill-opacity="0.4"/>
+  <circle cx="150" cy="220" r="2" fill="#ffffff" fill-opacity="0.5"/>
+  <circle cx="640" cy="380" r="2" fill="#ffffff" fill-opacity="0.5"/>
+
+  <!-- Credit Card Icon (~120px tall) centered at top -->
+  <g transform="translate(400, 180)" filter="url(#dropShadow)">
+    <!-- Back card (offset for depth) -->
+    <rect x="-95" y="-50" width="180" height="110" rx="14" ry="14" fill="#ffffff" fill-opacity="0.15" transform="rotate(-8)"/>
+    <!-- Main card -->
+    <rect x="-100" y="-60" width="200" height="120" rx="16" ry="16" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5"/>
+    <!-- Chip -->
+    <rect x="-78" y="-32" width="38" height="28" rx="5" ry="5" fill="url(#chipGrad)"/>
+    <!-- Chip inner lines -->
+    <line x1="-78" y1="-22" x2="-40" y2="-22" stroke="#a16207" stroke-opacity="0.6" stroke-width="1"/>
+    <line x1="-78" y1="-14" x2="-40" y2="-14" stroke="#a16207" stroke-opacity="0.6" stroke-width="1"/>
+    <line x1="-59" y1="-32" x2="-59" y2="-4" stroke="#a16207" stroke-opacity="0.6" stroke-width="1"/>
+    <!-- Contactless wave -->
+    <path d="M -25 -25 Q -15 -18 -25 -11" stroke="#ffffff" stroke-opacity="0.85" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M -18 -30 Q -4 -18 -18 -6" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M -11 -35 Q 7 -18 -11 -1" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Card number dots -->
+    <g fill="#ffffff" fill-opacity="0.85">
+      <circle cx="-75" cy="20" r="2.5"/>
+      <circle cx="-67" cy="20" r="2.5"/>
+      <circle cx="-59" cy="20" r="2.5"/>
+      <circle cx="-51" cy="20" r="2.5"/>
+      <circle cx="-35" cy="20" r="2.5"/>
+      <circle cx="-27" cy="20" r="2.5"/>
+      <circle cx="-19" cy="20" r="2.5"/>
+      <circle cx="-11" cy="20" r="2.5"/>
+      <circle cx="5" cy="20" r="2.5"/>
+      <circle cx="13" cy="20" r="2.5"/>
+      <circle cx="21" cy="20" r="2.5"/>
+      <circle cx="29" cy="20" r="2.5"/>
+    </g>
+    <!-- Card last 4 digits style -->
+    <rect x="48" y="16" width="44" height="8" rx="2" ry="2" fill="#ffffff" fill-opacity="0.9"/>
+    <!-- Bottom strip / brand circles -->
+    <circle cx="72" cy="45" r="10" fill="#ffffff" fill-opacity="0.85"/>
+    <circle cx="85" cy="45" r="10" fill="#ffffff" fill-opacity="0.55"/>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="380" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="44" text-anchor="middle" filter="url(#dropShadow)" letter-spacing="-0.5">CardX · SCBX</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="420" fill="#ffffff" fill-opacity="0.85" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="22" text-anchor="middle">Mobile · Web · API · Backend</text>
+
+  <!-- Thin accent line -->
+  <line x1="350" y1="450" x2="450" y2="450" stroke="#ffffff" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Small badge -->
+  <g transform="translate(400, 490)">
+    <rect x="-60" y="-14" width="120" height="28" rx="14" ry="14" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="0" y="5" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="12" text-anchor="middle" letter-spacing="1.5">FINTECH</text>
+  </g>
+</svg>
