@@ -202,25 +202,41 @@
       background: rgba(255,255,255,0.08); color: #e2e8f0;
       font-size: 0.78em; font-weight: 500; margin: 2px 4px 2px 0;
     }
-    /* Brands "worked with" wall */
+    /* Brands "worked with" wall — typography-styled tiles (no logo copies) */
     .brand-tile {
-      display: flex; align-items: center; justify-content: center;
-      height: 64px; padding: 8px 12px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 84px; padding: 14px 12px;
       background: #fff; border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       border-top: 3px solid transparent;
-      font-family: Inter, system-ui, sans-serif;
-      font-weight: 600; font-size: 0.92em; color: #4b5563;
-      letter-spacing: 0.2px;
       transition: all .22s ease;
-      text-align: center; line-height: 1.25;
+      text-align: center; line-height: 1.15;
     }
     .brand-tile:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-      color: #111;
     }
-    .brand-tile small { display: block; font-weight: 400; font-size: 0.74em; color: #94a3b8; margin-top: 2px; }
+    .brand-name {
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 700; font-size: 1.05em;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    /* Per-brand typographic accents — text only, not logo copies */
+    .brand-name.bt-ttb       { font-style: italic; text-transform: lowercase; letter-spacing: -0.5px; color: #0ea5e9; }
+    .brand-name.bt-krungsri  { text-transform: lowercase; letter-spacing: 0px; color: #d97706; font-weight: 800; }
+    .brand-name.bt-scbx      { text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: #7c3aed; }
+    .brand-name.bt-scg       { text-transform: uppercase; letter-spacing: 3px; font-weight: 800; color: #f97316; }
+    .brand-name.bt-gosoft    { font-weight: 700; color: #dc2626; }
+    .brand-name.bt-fastwork  { text-transform: lowercase; font-weight: 700; color: #10b981; }
+    .brand-name.bt-ayodia    { font-weight: 700; letter-spacing: 0.5px; color: #149ddd; }
+    .brand-name.bt-doppio    { font-style: italic; font-weight: 700; color: #6366f1; }
+    .brand-name.bt-magicbox  { font-weight: 700; color: #475569; }
+    .brand-tile small {
+      display: block; font-weight: 500; font-size: 0.72em;
+      color: #94a3b8; letter-spacing: 0.3px;
+    }
     /* Methodology stages */
     .stage-card {
       background: #fff; border-radius: 14px; padding: 28px 24px;
@@ -552,42 +568,42 @@
         <div class="row g-3 justify-content-center">
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#0ea5e9">
-            ttb Bank
+            <div class="brand-name bt-ttb">ttb</div>
             <small>Test Engineer</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#fbbf24">
-            Krungsri
-            <small>Nimble KMA</small>
+            <div class="brand-name bt-krungsri">krungsri</div>
+            <small>Nimble KMA app</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#7c3aed">
-            SCBX · CardX
+            <div class="brand-name bt-scbx">SCBX · CardX</div>
             <small>End-to-end automation</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#f97316">
-            SCG Digital
+            <div class="brand-name bt-scg">SCG Digital</div>
             <small>Automation training</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#dc2626">
-            Gosoft
+            <div class="brand-name bt-gosoft">Gosoft</div>
             <small>QA team lead</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#10b981">
-            Fastwork
+            <div class="brand-name bt-fastwork">fastwork</div>
             <small>QA Engineer</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#149ddd">
-            Ayodia
+            <div class="brand-name bt-ayodia">Ayodia</div>
             <small>QA Lead · current</small>
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#6366f1">
-            Doppio Tech
+            <div class="brand-name bt-doppio">Doppio Tech</div>
             <small>Senior QA Automation</small>
           </div></div>
 
