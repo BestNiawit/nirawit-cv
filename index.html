@@ -76,6 +76,54 @@
     .tech-tile:hover .tech-logo { opacity: 1; }
     .tech-name { font-size: 0.85em; font-weight: 500; color: #555; }
     .tech-cat { font-size: 0.7em; color: #999; margin-top: 4px; }
+    /* Featured Build section */
+    .featured-build {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      border-radius: 16px; padding: 40px 32px; color: #e2e8f0;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    .featured-build h3 { color: #fff; font-weight: 700; }
+    .build-eyebrow {
+      display: inline-block; padding: 4px 12px; border-radius: 50px;
+      background: rgba(255,255,255,0.12); color: #93c5fd;
+      font-size: 0.75em; font-weight: 600; letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .build-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      margin: 28px 0; padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 768px) { .build-stats { grid-template-columns: repeat(2, 1fr); } }
+    .build-stat { text-align: center; }
+    .build-stat .num { font-size: 1.8em; font-weight: 700; color: #fbbf24; line-height: 1.1; }
+    .build-stat .lbl { font-size: 0.78em; color: #cbd5e1; margin-top: 4px; }
+    .build-pillar {
+      background: rgba(255,255,255,0.05); border-radius: 12px;
+      padding: 24px; height: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .build-pillar h4 {
+      font-size: 1.05em; color: #fff; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .build-pillar .pillar-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(251,191,36,0.15); color: #fbbf24;
+      font-size: 1.2em; margin-bottom: 14px;
+    }
+    .build-pillar ul {
+      list-style: none; padding: 0; margin: 0;
+      font-size: 0.88em; color: #cbd5e1; line-height: 1.7;
+    }
+    .build-pillar ul li::before { content: "→ "; color: #60a5fa; font-weight: 600; }
+    .build-stack-chip {
+      display: inline-block; padding: 4px 12px; border-radius: 20px;
+      background: rgba(255,255,255,0.08); color: #e2e8f0;
+      font-size: 0.78em; font-weight: 500; margin: 2px 4px 2px 0;
+    }
   </style>
 
   <!-- =======================================================
@@ -100,6 +148,7 @@
         <li><a href="#techstack"><i class="bi bi-stack navicon"></i><span>Stack</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
+        <li><a href="#featured"><i class="bi bi-stars navicon"></i><span>Featured</span></a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
         <li><a href="#talks"><i class="bi bi-mic navicon"></i><span>Talks</span></a></li>
         <li><a href="#writing"><i class="bi bi-pencil-square navicon"></i><span>Writing</span></a></li>
@@ -404,6 +453,18 @@
           </div></div>
 
           <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/typescript.svg" alt="TypeScript" class="tech-logo">
+            <div class="tech-name">TypeScript</div>
+            <div class="tech-cat">Scripting</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/typst.svg" alt="Typst" class="tech-logo">
+            <div class="tech-name">Typst</div>
+            <div class="tech-cat">PDF Reports</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
             <img src="assets/img/tech/mysql.svg" alt="MySQL" class="tech-logo">
             <div class="tech-name">MySQL</div>
             <div class="tech-cat">Database</div>
@@ -652,6 +713,102 @@
       </div>
 
     </section><!-- /Portfolio Section -->
+
+    <!-- Featured Build Section -->
+    <section id="featured" class="featured section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Build</h2>
+        <p>A deeper look at one harness I built and run in production — the kind of end-to-end shape an entire QA engagement can take.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="featured-build">
+
+          <span class="build-eyebrow">CASE STUDY · PRODUCTION</span>
+          <h3 class="mb-1">iSingleForm Automation Harness</h3>
+          <p class="mb-0" style="color:#cbd5e1;font-size:0.95em">
+            Playwright + TypeScript regression suite with a Python-driven, multi-channel custom reporting pipeline.
+            Raw test JSON in &rarr; Typst-compiled executive PDF, per-test PDFs with embedded screenshots, Discord embed,
+            and SMTP email out. Release readiness is decided by a 4-criteria rubric, not a gut call.
+          </p>
+
+          <!-- KPI row -->
+          <div class="build-stats">
+            <div class="build-stat"><div class="num">707</div><div class="lbl">API test specs</div></div>
+            <div class="build-stat"><div class="num">~23.5k</div><div class="lbl">lines of TS test code</div></div>
+            <div class="build-stat"><div class="num">5</div><div class="lbl">reporting channels</div></div>
+            <div class="build-stat"><div class="num">4</div><div class="lbl">GO / NO-GO criteria</div></div>
+          </div>
+
+          <!-- 3 pillars -->
+          <div class="row gy-4">
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+              <div class="build-pillar">
+                <div class="pillar-icon"><i class="bi bi-layers"></i></div>
+                <h4>Framework</h4>
+                <ul>
+                  <li>Playwright 1.44+ · TypeScript 5 · Node 20</li>
+                  <li>3-tier Page Object Model (base &rarr; pages &rarr; specs)</li>
+                  <li>707 API specs across 10 domains (FO + BO)</li>
+                  <li>Multi-env config: dev / at / ci / prod</li>
+                  <li>GitLab CI: lint &rarr; parallel UI + API workers &rarr; auto-rerun on fail</li>
+                  <li>Custom fixture proxies every HTTP call into the report — zero manual instrumentation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+              <div class="build-pillar">
+                <div class="pillar-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                <h4>Custom Reporting</h4>
+                <ul>
+                  <li>Python aggregator: merges UI + API JSON, pulls GitLab trend history, derives a verdict</li>
+                  <li>Typst-compiled single-page executive PDF — verdict banner, KPI tiles, pass-rate sparkline, per-module delta vs previous</li>
+                  <li>Per-test PDFs (PDFKit) with 16:9 screenshot pairs and step-by-step flow</li>
+                  <li>Bilingual narrative (Thai + English) — non-technical summary with deploy recommendation</li>
+                  <li>Cross-channel <em>reconcile()</em>: first-pass fail + rerun pass &rarr; <em>flaky</em>, not green</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+              <div class="build-pillar">
+                <div class="pillar-icon"><i class="bi bi-bell"></i></div>
+                <h4>Notifications</h4>
+                <ul>
+                  <li>Discord webhook: embed with verdict icon, test tallies, failed / flaky list (first 8 / 5), report URL</li>
+                  <li>SMTP email: HTML body + exec-report.pdf attached, recipient list configurable per pipeline</li>
+                  <li>Trigger: GitLab CI <em>notify</em> stage <code>always</code> after regression</li>
+                  <li>Verdict logic shared with the PDF — same rubric, same reconcile, same source of truth</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Stack chips -->
+          <div class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.1)">
+            <div style="font-size:0.78em;color:#94a3b8;letter-spacing:1px;font-weight:600;margin-bottom:8px">STACK</div>
+            <span class="build-stack-chip">Playwright</span>
+            <span class="build-stack-chip">TypeScript</span>
+            <span class="build-stack-chip">Node.js 20</span>
+            <span class="build-stack-chip">Python 3.12</span>
+            <span class="build-stack-chip">Typst</span>
+            <span class="build-stack-chip">PDFKit</span>
+            <span class="build-stack-chip">GitLab CI</span>
+            <span class="build-stack-chip">Discord Webhook</span>
+            <span class="build-stack-chip">SMTP</span>
+            <span class="build-stack-chip">Jinja-style templating</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Build Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
