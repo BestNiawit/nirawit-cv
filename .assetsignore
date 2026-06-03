@@ -13,6 +13,7 @@ package-lock.json
 .DS_Store
 .vscode/
 .idea/
+.claude/
 # Template artefacts not used in this site
 forms/
 *.php
