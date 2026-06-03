@@ -91,6 +91,9 @@
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
   <link href="assets/favicon.svg" rel="apple-touch-icon">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nirawit-cv.bossma6.workers.dev/">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -199,6 +202,63 @@
       background: rgba(255,255,255,0.08); color: #e2e8f0;
       font-size: 0.78em; font-weight: 500; margin: 2px 4px 2px 0;
     }
+    /* Brands "worked with" wall */
+    .brand-tile {
+      display: flex; align-items: center; justify-content: center;
+      height: 64px; padding: 8px 12px;
+      background: #fff; border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-top: 3px solid transparent;
+      font-family: Inter, system-ui, sans-serif;
+      font-weight: 600; font-size: 0.92em; color: #4b5563;
+      letter-spacing: 0.2px;
+      transition: all .22s ease;
+      text-align: center; line-height: 1.25;
+    }
+    .brand-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      color: #111;
+    }
+    .brand-tile small { display: block; font-weight: 400; font-size: 0.74em; color: #94a3b8; margin-top: 2px; }
+    /* Methodology stages */
+    .stage-card {
+      background: #fff; border-radius: 14px; padding: 28px 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      height: 100%; position: relative; transition: all .25s ease;
+      border: 1px solid #eef2f7;
+    }
+    .stage-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+    .stage-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #149ddd, #1e40af);
+      color: #fff; font-weight: 800; font-size: 1.1em;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(20, 157, 221, 0.35);
+    }
+    .stage-when {
+      display: inline-block; padding: 3px 12px; border-radius: 50px;
+      background: rgba(20, 157, 221, 0.1); color: #1e40af;
+      font-size: 0.72em; font-weight: 700; letter-spacing: 1.2px;
+      margin-bottom: 10px;
+    }
+    .stage-card h4 { font-weight: 700; color: #1e293b; margin-bottom: 12px; font-size: 1.15em; }
+    .stage-card ul { list-style: none; padding: 0; margin: 0; font-size: 0.92em; color: #4b5563; line-height: 1.7; }
+    .stage-card ul li { padding-left: 20px; position: relative; margin-bottom: 6px; }
+    .stage-card ul li::before {
+      content: "✓"; position: absolute; left: 0; top: 0;
+      color: #149ddd; font-weight: 700;
+    }
+    .stage-arrow {
+      display: none;
+    }
+    @media (min-width: 992px) {
+      .stage-arrow {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.6em; color: #cbd5e1;
+      }
+    }
     /* Scroll progress bar — thin accent strip at the top of the viewport */
     #scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0;
@@ -258,6 +318,7 @@
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
         <li><a href="#featured"><i class="bi bi-stars navicon"></i><span>Featured</span></a></li>
+        <li><a href="#methodology"><i class="bi bi-diagram-3 navicon"></i><span>Method</span></a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
         <li><a href="#talks"><i class="bi bi-mic navicon"></i><span>Talks</span></a></li>
         <li><a href="#writing"><i class="bi bi-pencil-square navicon"></i><span>Writing</span></a></li>
@@ -387,6 +448,66 @@
       </div>
 
     </section><!-- /Stats Section -->
+
+    <!-- Brands Wall -->
+    <section id="brands" class="brands section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Worked With</h2>
+        <p>Engagements over the past 5+ years across banking, fintech, e-commerce, and SaaS — through direct employment and consultancy assignments.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-3 justify-content-center">
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#0ea5e9">
+            ttb Bank
+            <small>Test Engineer</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#fbbf24">
+            Krungsri
+            <small>Nimble KMA</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#7c3aed">
+            SCBX · CardX
+            <small>End-to-end automation</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#f97316">
+            SCG Digital
+            <small>Automation training</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#dc2626">
+            Gosoft
+            <small>QA team lead</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#10b981">
+            Fastwork
+            <small>QA Engineer</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#149ddd">
+            Ayodia
+            <small>QA Lead · current</small>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="brand-tile" style="border-top-color:#6366f1">
+            Doppio Tech
+            <small>Senior QA Automation</small>
+          </div></div>
+
+        </div>
+
+        <p class="text-center mt-4 mb-0" style="color:#888;font-size:0.85em">
+          Direct engagements plus consultancy via Doppio Tech (CardX, Krungsri, SCG, Gosoft).
+        </p>
+      </div>
+
+    </section><!-- /Brands Wall -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
@@ -1022,6 +1143,78 @@
       </div>
 
     </section><!-- /Featured Build Section -->
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="methodology section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How I Onboard</h2>
+        <p>Concrete deliverables a hiring manager can expect when I join a team — not promises, just the shape of the first quarter.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4 align-items-stretch">
+
+          <!-- Stage 1 -->
+          <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="stage-card">
+              <div class="stage-num">1</div>
+              <span class="stage-when">WEEK 1</span>
+              <h4>Audit &amp; Assess</h4>
+              <ul>
+                <li>Map current test coverage — gaps, redundancies, manual-only paths</li>
+                <li>Audit CI/CD touchpoints &amp; identify friction</li>
+                <li>Baseline KPIs: defect leakage, coverage %, cycle time</li>
+                <li>Shortlist the biggest risk items by impact × effort</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-auto d-none d-lg-flex stage-arrow"><i class="bi bi-arrow-right"></i></div>
+
+          <!-- Stage 2 -->
+          <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="stage-card">
+              <div class="stage-num">2</div>
+              <span class="stage-when">MONTH 1</span>
+              <h4>Frameworks Live</h4>
+              <ul>
+                <li>Automation framework running end-to-end in CI</li>
+                <li>AI Skills configured for the team's stack — test gen, bug reports, triage</li>
+                <li>First metrics dashboard live (Grafana / built-in CI reports)</li>
+                <li>Pipeline templates documented so juniors can extend safely</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-auto d-none d-lg-flex stage-arrow"><i class="bi bi-arrow-right"></i></div>
+
+          <!-- Stage 3 -->
+          <div class="col-lg col-md-12" data-aos="fade-up" data-aos-delay="350">
+            <div class="stage-card">
+              <div class="stage-num">3</div>
+              <span class="stage-when">QUARTER 1</span>
+              <h4>KPIs Reported</h4>
+              <ul>
+                <li>Automated regression running every sprint, results visible to PMs</li>
+                <li>Junior QAs trained — writing &amp; extending tests on their own</li>
+                <li>Manual regression hours measurably down; defect leakage tracked</li>
+                <li>Process docs in place so the system survives a handover</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-center mt-5 mb-0" style="color:#777;font-size:0.9em">
+          Scope flexes by engagement size — full-time QA Lead, fractional setup, or focused automation sprint.
+          <a href="#contact" style="color:#149ddd;font-weight:600;text-decoration:none">Let's scope yours &rarr;</a>
+        </p>
+
+      </div>
+
+    </section><!-- /Methodology Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">

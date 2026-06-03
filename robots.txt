@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://nirawit-cv.bossma6.workers.dev/sitemap.xml
