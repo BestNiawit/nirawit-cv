@@ -39,13 +39,43 @@
 
   <!-- Site overrides -->
   <style>
-    .writing-card:hover {
+    .writing-card:hover, .talk-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1) !important;
     }
-    .writing-card:hover h4 {
+    .writing-card:hover h4, .talk-card:hover h4 {
       color: #149ddd !important;
     }
+    /* Hero: darker overlay for text contrast over busy backgrounds */
+    .hero::before { background: rgba(0, 0, 0, 0.35) !important; }
+    .hero h2, .hero p { color: #fff !important; }
+    .hero .social-links a { color: rgba(255,255,255,0.85) !important; }
+    .hero .social-links a:hover { color: #fff !important; }
+    .hero-actions { margin-top: 28px; }
+    .hero-actions .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 50px;
+      font-weight: 600; letter-spacing: 0.5px;
+      transition: all .2s;
+    }
+    .hero-actions .btn-light { background: #fff; color: #222; }
+    .hero-actions .btn-light:hover { background: #149ddd; color: #fff; }
+    .hero-actions .btn-outline-light {
+      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6);
+    }
+    .hero-actions .btn-outline-light:hover { background: #fff; color: #222; border-color: #fff; }
+    /* Tech Stack tiles */
+    .tech-tile {
+      background: #fff; border-radius: 12px; padding: 24px 12px;
+      text-align: center; height: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: all .2s;
+    }
+    .tech-tile:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+    .tech-logo { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.85; transition: opacity .2s; }
+    .tech-tile:hover .tech-logo { opacity: 1; }
+    .tech-name { font-size: 0.85em; font-weight: 500; color: #555; }
+    .tech-cat { font-size: 0.7em; color: #999; margin-top: 4px; }
   </style>
 
   <!-- =======================================================
@@ -67,9 +97,11 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#techstack"><i class="bi bi-stack navicon"></i><span>Stack</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
+        <li><a href="#talks"><i class="bi bi-mic navicon"></i><span>Talks</span></a></li>
         <li><a href="#writing"><i class="bi bi-pencil-square navicon"></i><span>Writing</span></a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
       </ul>
@@ -94,6 +126,10 @@
               <a href="https://github.com/BestNiawit" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
               <a href="https://medium.com/@nirawit.mail" target="_blank" rel="noopener" aria-label="Medium"><i class="bi bi-medium"></i></a>
               <a href="#contact" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+            <div class="hero-actions">
+              <a href="assets/Nirawit_Thepsawade_CV_2026.pdf" download class="btn btn-light"><i class="bi bi-download"></i> Download CV</a>
+              <a href="#contact" class="btn btn-outline-light"><i class="bi bi-send"></i> Get in touch</a>
             </div>
           </div>
         </div>
@@ -277,6 +313,100 @@
 
     </section><!-- /Skills Section -->
 
+    <!-- Tech Stack Section -->
+    <section id="techstack" class="techstack section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tech Stack</h2>
+        <p>Tools I work with day to day — automation frameworks, performance, CI/CD, data, and runtime.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-3 justify-content-center">
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/robotframework.svg" alt="Robot Framework" class="tech-logo">
+            <div class="tech-name">Robot Framework</div>
+            <div class="tech-cat">Automation</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/playwright.svg" alt="Playwright" class="tech-logo">
+            <div class="tech-name">Playwright</div>
+            <div class="tech-cat">E2E</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/selenium.svg" alt="Selenium" class="tech-logo">
+            <div class="tech-name">Selenium</div>
+            <div class="tech-cat">Web Automation</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/appium.svg" alt="Appium" class="tech-logo">
+            <div class="tech-name">Appium</div>
+            <div class="tech-cat">Mobile</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/jest.svg" alt="JEST" class="tech-logo">
+            <div class="tech-name">JEST</div>
+            <div class="tech-cat">Unit / API</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/postman.svg" alt="Postman" class="tech-logo">
+            <div class="tech-name">Postman</div>
+            <div class="tech-cat">API Testing</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/apachejmeter.svg" alt="Apache JMeter" class="tech-logo">
+            <div class="tech-name">JMeter</div>
+            <div class="tech-cat">Performance</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/k6.svg" alt="k6" class="tech-logo">
+            <div class="tech-name">k6</div>
+            <div class="tech-cat">Load Testing</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/jenkins.svg" alt="Jenkins" class="tech-logo">
+            <div class="tech-name">Jenkins</div>
+            <div class="tech-cat">CI/CD</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/python.svg" alt="Python" class="tech-logo">
+            <div class="tech-name">Python</div>
+            <div class="tech-cat">Scripting</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/mysql.svg" alt="MySQL" class="tech-logo">
+            <div class="tech-name">MySQL</div>
+            <div class="tech-cat">Database</div>
+          </div></div>
+
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2"><div class="tech-tile">
+            <img src="assets/img/tech/mongodb.svg" alt="MongoDB" class="tech-logo">
+            <div class="tech-name">MongoDB</div>
+            <div class="tech-cat">Database</div>
+          </div></div>
+
+        </div>
+
+        <p class="text-center mt-4" style="color:#777;font-size:0.9em">
+          Also working with: DBeaver · MongoDB Compass · GitLab · GitHub · Bitbucket · Grafana · Claude Code (13 custom AI Skills)
+        </p>
+
+      </div>
+
+    </section><!-- /Tech Stack Section -->
+
     <!-- Resume Section -->
     <section id="resume" class="resume section">
 
@@ -427,8 +557,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-1.svg" class="img-fluid" alt="13 Custom AI Skills">
               <div class="portfolio-info">
                 <h4>13 Custom AI Skills</h4>
-                <p>Built on Claude Code · QA team workflow</p>
-                <a href="https://medium.com/@nirawit.mail/ทำไม-qa-ทีมเราถึงหยุดใช้-chatgpt-แบบ-ad-hoc-แล้วสร้าง-ai-skills-ขึ้นมาเอง-13-ตัว-36ad943f7c04" target="_blank" rel="noopener" title="Read the Medium article" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <p>Built on Claude Code · QA team workflow (see Writing for the series)</p>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -445,7 +574,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-3.svg" class="img-fluid" alt="CardX SCBX">
               <div class="portfolio-info">
                 <h4>CardX · SCBX Group</h4>
-                <p>End-to-end automation · Mobile / Web / API / Backend</p>
+                <p>E2E coverage across Mobile / Web / API / Backend · scalable regression suite</p>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -453,7 +582,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-4.svg" class="img-fluid" alt="Nimble KMA Krungsri">
               <div class="portfolio-info">
                 <h4>Nimble KMA · Krungsri Bank</h4>
-                <p>Digital banking · Regression &amp; API validation</p>
+                <p>Mobile + API regression automation · digital banking platform</p>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -461,7 +590,7 @@
               <img src="assets/img/masonry-portfolio/masonry-portfolio-5.svg" class="img-fluid" alt="ttb Bank · Digital Banking">
               <div class="portfolio-info">
                 <h4>ttb Bank · Digital Banking</h4>
-                <p>Mobile · Web · API automation (Selenium + Appium)</p>
+                <p>95%+ UAT coverage · Mobile / Web / API automation (Selenium + Appium) · faster regression cycle</p>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -614,6 +743,65 @@
       </div>
 
     </section><!-- /Services Section -->
+
+    <!-- Talks & Workshops Section -->
+    <section id="talks" class="talks section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Talks &amp; Workshops</h2>
+        <p>Sessions I've run for engineers and students — focused on test automation, AI-assisted QA workflows, and setting up a QA function in practice.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <!-- Talk 1: SCG Digital -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="talk-card h-100 p-4" style="background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s, box-shadow .2s">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge px-3 py-2" style="background:#f97316;color:#fff;font-size:0.75em;letter-spacing:1px">TRAINING</span>
+                <span style="font-size:0.85em;color:#888">2024 – 2025</span>
+              </div>
+              <h4 class="mb-2" style="font-weight:700;line-height:1.4;color:#222">Web Automation Bootcamp</h4>
+              <div class="mb-3" style="color:#149ddd;font-weight:600;font-size:0.9em">SCG Digital · Corporate Training</div>
+              <p style="color:#666;line-height:1.6;margin-bottom:0">Instructor-led training sessions to onboard engineers into web automation. Covered framework setup, locator strategies, and writing maintainable E2E tests from scratch.</p>
+            </div>
+          </div>
+
+          <!-- Talk 2: Ayodia internal -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="talk-card h-100 p-4" style="background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s, box-shadow .2s">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge px-3 py-2" style="background:#6366f1;color:#fff;font-size:0.75em;letter-spacing:1px">INTERNAL</span>
+                <span style="font-size:0.85em;color:#888">2026 · Ongoing</span>
+              </div>
+              <h4 class="mb-2" style="font-weight:700;line-height:1.4;color:#222">AI Skills in QA · Knowledge Sharing</h4>
+              <div class="mb-3" style="color:#149ddd;font-weight:600;font-size:0.9em">Ayodia · Cross-team Sessions</div>
+              <p style="color:#666;line-height:1.6;margin-bottom:0">Sharing the design and operation of the 13 custom AI Skills built on Claude Code with PMs, devs, and other QAs — what to use them for, how they connect, and how to extend them safely.</p>
+            </div>
+          </div>
+
+          <!-- Talk 3: KMUTT / RMUTP guest lecture -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="talk-card h-100 p-4" style="background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s, box-shadow .2s">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge px-3 py-2" style="background:#10b981;color:#fff;font-size:0.75em;letter-spacing:1px">GUEST LECTURE</span>
+                <span style="font-size:0.85em;color:#888">2025 – 2026</span>
+              </div>
+              <h4 class="mb-2" style="font-weight:700;line-height:1.4;color:#222">QA &amp; Test Automation in Industry</h4>
+              <div class="mb-3" style="color:#149ddd;font-weight:600;font-size:0.9em">KMUTT · RMUTP · Alumni Lecture</div>
+              <p style="color:#666;line-height:1.6;margin-bottom:0">Returned to both alma maters to share what QA actually looks like in industry — the workflow, the tools, and how an Information Systems / Digital Business graduate ends up running a QA function.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-center mt-4 mb-0" style="color:#888;font-size:0.9em">Open to guest lectures, internal workshops, and meetup talks. <a href="#contact" style="color:#149ddd;font-weight:600">Reach out →</a></p>
+
+      </div>
+
+    </section><!-- /Talks & Workshops Section -->
 
     <!-- Writing Section -->
     <section id="writing" class="writing section">
