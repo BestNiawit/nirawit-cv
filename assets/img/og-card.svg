@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#149ddd"/>
+    </linearGradient>
+    <radialGradient id="ogglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ogshadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="b"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <circle cx="180" cy="120" r="280" fill="url(#ogglow)"/>
+  <circle cx="1020" cy="520" r="320" fill="url(#ogglow)"/>
+
+  <!-- decorative grid dots -->
+  <g fill="#ffffff" fill-opacity="0.10">
+    <circle cx="80"  cy="80"  r="2.5"/>
+    <circle cx="140" cy="80"  r="2.5"/>
+    <circle cx="200" cy="80"  r="2.5"/>
+    <circle cx="80"  cy="140" r="2.5"/>
+    <circle cx="140" cy="140" r="2.5"/>
+    <circle cx="1120" cy="550" r="2.5"/>
+    <circle cx="1060" cy="550" r="2.5"/>
+    <circle cx="1000" cy="550" r="2.5"/>
+    <circle cx="1120" cy="490" r="2.5"/>
+    <circle cx="1060" cy="490" r="2.5"/>
+  </g>
+
+  <!-- accent bracket / brand mark -->
+  <g transform="translate(70, 70)" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round">
+    <line x1="0"  y1="0"  x2="22" y2="0"/>
+    <line x1="0"  y1="0"  x2="0"  y2="22"/>
+  </g>
+  <g transform="translate(1108, 538)" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round">
+    <line x1="0"  y1="22" x2="22" y2="22"/>
+    <line x1="22" y1="0"  x2="22" y2="22"/>
+  </g>
+
+  <!-- eyebrow -->
+  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#93c5fd" letter-spacing="4">QUALITY ASSURANCE LEAD · BANGKOK</text>
+
+  <!-- name -->
+  <text x="100" y="290" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="92" fill="#ffffff" letter-spacing="-2" filter="url(#ogshadow)">Nirawit Thepsawade</text>
+
+  <!-- role tagline -->
+  <text x="100" y="350" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#e2e8f0">QA Lead · Automation Engineer · AI Workflow Builder</text>
+
+  <!-- description -->
+  <text x="100" y="420" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">5+ years across web, API, mobile, POS, and core banking.</text>
+  <text x="100" y="450" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">Building QA at Ayodia with 15 custom AI Skills on Claude Code.</text>
+
+  <!-- chips row -->
+  <g transform="translate(100, 500)">
+    <g>
+      <rect x="0" y="0" width="160" height="36" rx="18" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+      <text x="80" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#ffffff" text-anchor="middle">Robot Framework</text>
+    </g>
+    <g transform="translate(172, 0)">
+      <rect x="0" y="0" width="120" height="36" rx="18" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+      <text x="60" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#ffffff" text-anchor="middle">Playwright</text>
+    </g>
+    <g transform="translate(304, 0)">
+      <rect x="0" y="0" width="86" height="36" rx="18" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+      <text x="43" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#ffffff" text-anchor="middle">Jenkins</text>
+    </g>
+    <g transform="translate(402, 0)">
+      <rect x="0" y="0" width="170" height="36" rx="18" fill="rgba(251,191,36,0.18)" stroke="rgba(251,191,36,0.45)" stroke-width="1"/>
+      <text x="85" y="23" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="14" fill="#fde68a" text-anchor="middle">15 Custom AI Skills</text>
+    </g>
+  </g>
+
+  <!-- status indicator -->
+  <g transform="translate(100, 570)">
+    <circle cx="8" cy="10" r="5" fill="#22c55e"/>
+    <circle cx="8" cy="10" r="9" fill="none" stroke="#22c55e" stroke-opacity="0.4" stroke-width="2"/>
+    <text x="24" y="15" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="15" fill="#a7f3d0">Open to Senior QA / QA Lead roles</text>
+  </g>
+
+  <!-- domain -->
+  <text x="1100" y="595" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#94a3b8" text-anchor="end" letter-spacing="2">NIRAWIT-CV.WORKERS.DEV</text>
+</svg>

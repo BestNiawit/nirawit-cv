@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>404 · Not Found · Nirawit Thepsawade</title>
+  <meta name="description" content="Page not found on Nirawit Thepsawade's CV site.">
+  <meta name="robots" content="noindex">
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #149ddd 100%);
+      color: #e2e8f0; padding: 24px;
+    }
+    .wrap { max-width: 640px; text-align: center; }
+    .code {
+      font-family: "JetBrains Mono", "Menlo", monospace;
+      font-size: 6rem; font-weight: 800; line-height: 1;
+      color: #fbbf24; letter-spacing: -4px; margin: 0 0 8px;
+      text-shadow: 0 4px 30px rgba(251, 191, 36, 0.4);
+    }
+    .tag {
+      display: inline-block; padding: 6px 14px; border-radius: 50px;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.75rem; letter-spacing: 3px; font-weight: 600;
+      color: #93c5fd; margin-bottom: 20px;
+    }
+    h1 { font-size: 2.2rem; font-weight: 700; margin: 0 0 14px; color: #fff; }
+    p { font-size: 1.05rem; line-height: 1.6; color: #cbd5e1; margin: 0 0 8px; }
+    p.dim { color: #94a3b8; font-size: 0.95rem; }
+    .console {
+      display: inline-block; text-align: left;
+      font-family: "JetBrains Mono", monospace; font-size: 0.85rem;
+      background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 14px 18px; margin: 24px 0;
+      color: #cbd5e1;
+    }
+    .console .ok { color: #22c55e; }
+    .console .err { color: #f87171; }
+    .console .dim { color: #64748b; }
+    .console .out { color: #93c5fd; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 50px; font-weight: 600;
+      text-decoration: none; transition: all .2s;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary { background: #fbbf24; color: #1e293b; }
+    .btn-primary:hover { background: #fde68a; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="tag">QA · TEST FAILED</span>
+    <div class="code">404</div>
+    <h1>Page not found</h1>
+    <p>The page you were looking for didn't make it past the assertion.</p>
+
+    <div class="console">
+      <div><span class="dim">$</span> curl -I /this/page</div>
+      <div><span class="err">✗ FAIL</span> <span class="dim">expected:</span> 200 OK</div>
+      <div><span class="err">✗ FAIL</span> <span class="dim">actual:</span>   404 Not Found</div>
+      <div><span class="ok">→ HINT</span>  <span class="out">click below to redirect to a passing test</span></div>
+    </div>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">← Back to home</a>
+      <a href="/#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+
+    <p class="dim" style="margin-top:28px">
+      Or jump to a section: <a style="color:#93c5fd" href="/#about">About</a> ·
+      <a style="color:#93c5fd" href="/#resume">Resume</a> ·
+      <a style="color:#93c5fd" href="/#portfolio">Portfolio</a> ·
+      <a style="color:#93c5fd" href="/#featured">Featured Build</a> ·
+      <a style="color:#93c5fd" href="/#writing">Writing</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -10,13 +10,82 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Nirawit Thepsawade · QA Lead · Bangkok">
-  <meta property="og:description" content="5+ years in QA across web, API, mobile, POS, and core banking. Building QA at Ayodia, writing on Medium. Open to Senior QA / QA Lead roles.">
+  <meta property="og:description" content="5+ years in QA across web, API, mobile, POS, and core banking. Building QA at Ayodia with 15 custom AI Skills on Claude Code. Open to Senior QA / QA Lead roles.">
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://nirawit-cv.bossma6.workers.dev/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nirawit Thepsawade · Quality Assurance Lead · Bangkok">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nirawit Thepsawade · QA Lead">
   <meta name="twitter:description" content="5+ years in QA · web, API, mobile, POS, core banking · Bangkok / remote · Open to work">
+  <meta name="twitter:image" content="https://nirawit-cv.bossma6.workers.dev/assets/img/og-card.jpg">
   <meta name="theme-color" content="#149ddd">
+
+  <!-- Schema.org structured data — helps Google build a rich card -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nirawit Thepsawade",
+    "alternateName": "Best",
+    "jobTitle": "Quality Assurance Lead",
+    "worksFor": { "@type": "Organization", "name": "Ayodia" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangkok",
+      "addressCountry": "TH"
+    },
+    "email": "nirawit.mail@gmail.com",
+    "url": "https://nirawit-cv.bossma6.workers.dev",
+    "image": "https://nirawit-cv.bossma6.workers.dev/assets/img/profile-img.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/nirawit-thepsawade-169451236",
+      "https://github.com/BestNiawit",
+      "https://medium.com/@nirawit.mail"
+    ],
+    "knowsAbout": [
+      "Test Automation",
+      "Robot Framework",
+      "Playwright",
+      "Selenium WebDriver",
+      "Apache JMeter",
+      "k6 Performance Testing",
+      "Jenkins CI/CD",
+      "GitLab CI",
+      "QA Engineering",
+      "AI-Assisted Quality Assurance",
+      "Claude Code",
+      "Mobile Automation",
+      "API Testing",
+      "Core Banking QA"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "King Mongkut's University of Technology Thonburi",
+        "department": "M.Sc. Digital Business"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Rajamangala University of Technology Phra Nakhon",
+        "department": "B.Sc. Business Administration (Information Systems)"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Dev console greeting -->
+  <script>
+    console.log(
+      "%c👋 Hi dev!%c\nOpen to Senior QA / QA Lead roles.\nReach me at %cnirawit.mail@gmail.com%c\nLinkedIn: linkedin.com/in/nirawit-thepsawade-169451236",
+      "color:#149ddd;font-size:18px;font-weight:bold;line-height:1.6",
+      "color:#475569;font-size:13px;line-height:1.6",
+      "color:#fbbf24;font-size:13px;font-weight:bold",
+      "color:#475569;font-size:13px;line-height:1.6"
+    );
+  </script>
 
   <!-- Favicons -->
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
@@ -130,6 +199,37 @@
       background: rgba(255,255,255,0.08); color: #e2e8f0;
       font-size: 0.78em; font-weight: 500; margin: 2px 4px 2px 0;
     }
+    /* Scroll progress bar — thin accent strip at the top of the viewport */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: linear-gradient(90deg, #149ddd, #fbbf24);
+      z-index: 10000; transition: width 0.08s linear;
+      pointer-events: none;
+    }
+    /* Print styles — for HR who still print CVs */
+    @media print {
+      @page { margin: 18mm 15mm; }
+      body { background: #fff !important; color: #000 !important; font-family: Georgia, "Times New Roman", serif !important; }
+      header, .header, nav, #navmenu, #scroll-top, #scroll-progress, #preloader, .hero img,
+      .hero-actions, .social-links, .scroll-progress, .swiper-pagination { display: none !important; }
+      .hero::before { background: none !important; }
+      main { margin-left: 0 !important; }
+      section, .section { page-break-inside: avoid; padding: 12px 0 !important; }
+      .hero { min-height: auto !important; padding: 0 !important; }
+      .hero h2 { color: #000 !important; font-size: 28pt !important; }
+      .hero p, .hero h2 { color: #000 !important; }
+      .featured-build { background: #fff !important; color: #000 !important; box-shadow: none !important; border: 1px solid #ccc; }
+      .featured-build h3, .featured-build h4, .build-pillar h4 { color: #000 !important; }
+      .build-pillar { background: #fff !important; border: 1px solid #ccc !important; }
+      .build-pillar ul, .build-stat .lbl, .featured-build p { color: #333 !important; }
+      .build-stat .num { color: #000 !important; }
+      .build-stack-chip { background: #f3f4f6 !important; color: #000 !important; border: 1px solid #ccc; }
+      .tech-tile { box-shadow: none !important; border: 1px solid #ddd; }
+      a { color: #000 !important; text-decoration: underline !important; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; word-break: break-all; }
+      a[href^="#"]::after, a[href^="mailto:"]::after, a.btn::after { content: none !important; }
+      img, svg { max-width: 100% !important; page-break-inside: avoid; }
+    }
   </style>
 
   <!-- =======================================================
@@ -142,6 +242,9 @@
 </head>
 
 <body class="index-page">
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <header id="header" class="header d-flex flex-column justify-content-center">
 
@@ -1211,6 +1314,24 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Scroll progress bar updater -->
+  <script>
+    (function() {
+      var bar = document.getElementById('scroll-progress');
+      if (!bar) return;
+      function update() {
+        var h = document.documentElement;
+        var scrolled = h.scrollTop;
+        var max = h.scrollHeight - h.clientHeight;
+        var pct = max > 0 ? (scrolled / max) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      document.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 
 </body>
 
