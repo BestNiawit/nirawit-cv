@@ -398,28 +398,128 @@
       z-index: 10000; transition: width 0.08s linear;
       pointer-events: none;
     }
-    /* Print styles · for HR who still print CVs */
+    /* Print styles · for HR who want a static landing-page PDF */
     @media print {
-      @page { margin: 18mm 15mm; }
-      body { background: #fff !important; color: #000 !important; font-family: Georgia, "Times New Roman", serif !important; }
-      header, .header, nav, #navmenu, #scroll-top, #scroll-progress, #preloader, .hero img,
-      .hero-actions, .social-links, .scroll-progress, .swiper-pagination { display: none !important; }
+      @page { margin: 14mm; size: A4; }
+      /* Force AOS-hidden elements visible — otherwise sections the visitor didn't scroll to stay invisible */
+      [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+      *, *::before, *::after {
+        box-shadow: none !important; text-shadow: none !important; filter: none !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+      }
+      body {
+        background: #fff !important; color: #1e293b !important;
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: 10.5pt; line-height: 1.4;
+      }
+      /* Hide chrome + interactive */
+      #header, .header, nav, #navmenu, #scroll-top, #scroll-progress, #preloader,
+      .hero img, .hero-actions, .social-links,
+      .swiper-pagination, .scroll-hint, .scroll-progress,
+      #fit, .stage-arrow,
+      .portfolio-filters, .isotope-filters,
+      .no-print, [data-no-print] { display: none !important; }
       .hero::before { background: none !important; }
-      main { margin-left: 0 !important; }
-      section, .section { page-break-inside: avoid; padding: 12px 0 !important; }
-      .hero { min-height: auto !important; padding: 0 !important; }
-      .hero h2 { color: #000 !important; font-size: 28pt !important; }
-      .hero p, .hero h2 { color: #000 !important; }
-      .featured-build { background: #fff !important; color: #000 !important; box-shadow: none !important; border: 1px solid #ccc; }
-      .featured-build h3, .featured-build h4, .build-pillar h4 { color: #000 !important; }
-      .build-pillar { background: #fff !important; border: 1px solid #ccc !important; }
-      .build-pillar ul, .build-stat .lbl, .featured-build p { color: #333 !important; }
-      .build-stat .num { color: #000 !important; }
-      .build-stack-chip { background: #f3f4f6 !important; color: #000 !important; border: 1px solid #ccc; }
-      .tech-tile { box-shadow: none !important; border: 1px solid #ddd; }
-      a { color: #000 !important; text-decoration: underline !important; }
-      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; word-break: break-all; }
-      a[href^="#"]::after, a[href^="mailto:"]::after, a.btn::after { content: none !important; }
+      main, body.index-page { margin-left: 0 !important; }
+      section, .section {
+        padding: 8px 0 !important; page-break-inside: avoid;
+        margin: 0 0 8px 0 !important;
+      }
+      /* Hero compact */
+      .hero { min-height: auto !important; padding: 0 !important; page-break-after: avoid; }
+      .hero h2 { color: #149ddd !important; font-size: 26pt !important; margin-top: 0 !important; }
+      .hero p { color: #1e293b !important; font-size: 13pt !important; }
+      /* Section titles */
+      .section-title h2 { color: #149ddd !important; font-size: 18pt !important; margin-bottom: 6px !important; }
+      .section-title p { color: #475569 !important; font-size: 10pt !important; }
+      h3, h4, h5 { color: #1e293b !important; }
+      /* Featured Build dark cards → light */
+      .featured-build {
+        background: #fff !important; color: #1e293b !important;
+        border: 1px solid #cbd5e1 !important; padding: 16px !important;
+        border-radius: 8px !important;
+      }
+      .featured-build h3, .featured-build h4, .build-pillar h4 { color: #149ddd !important; }
+      .featured-build p, .featured-build span { color: #1e293b !important; }
+      .build-eyebrow { background: #f1f5f9 !important; color: #475569 !important; }
+      .build-stats { border-top-color: #e2e8f0 !important; border-bottom-color: #e2e8f0 !important; }
+      .build-stat .num { color: #149ddd !important; }
+      .build-stat .lbl { color: #475569 !important; }
+      .build-pillar { background: #f8fafc !important; border: 1px solid #e2e8f0 !important; }
+      .build-pillar .pillar-icon { background: #eef2ff !important; color: #149ddd !important; }
+      .build-pillar ul li::before { color: #149ddd !important; }
+      .build-pillar ul, .build-pillar li { color: #1e293b !important; }
+      .build-stack-chip {
+        background: #f1f5f9 !important; color: #1e293b !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+      .featured-build a[href="#writing"] { display: none !important; }
+      /* Brand tiles */
+      .brand-tile {
+        border: 1px solid #e2e8f0 !important; padding: 8px !important;
+        min-height: auto !important;
+      }
+      .brand-name { font-size: 0.95em !important; }
+      /* Tech tiles */
+      .tech-tile { border: 1px solid #e2e8f0 !important; padding: 8px !important; }
+      .tech-logo { width: 24px !important; height: 24px !important; margin-bottom: 4px !important; }
+      .tech-name { font-size: 0.78em !important; }
+      .tech-cat { font-size: 0.65em !important; }
+      /* Portfolio: hide masonry SVGs (vibrant gradients don't print well), keep info */
+      .portfolio-item img { display: none !important; }
+      .portfolio-item {
+        border: 1px solid #e2e8f0 !important;
+        padding: 8px 12px !important; margin-bottom: 6px !important;
+      }
+      .portfolio-info { position: static !important; padding: 0 !important; background: transparent !important; }
+      .portfolio-info h4 { color: #149ddd !important; font-size: 11pt !important; margin: 0 !important; }
+      .portfolio-info p { font-size: 9pt !important; color: #475569 !important; margin: 2px 0 0 !important; }
+      .portfolio-info a { display: none !important; }
+      /* Resume */
+      .resume-item { margin-bottom: 8px !important; padding: 0 !important; }
+      .resume-item h4 { color: #149ddd !important; font-size: 11pt !important; }
+      .resume-item h5 { font-size: 9pt !important; color: #64748b !important; }
+      .resume-item p, .resume-item ul li { font-size: 9.5pt !important; }
+      .proj-chip {
+        background: #eef2ff !important; color: #1e40af !important;
+        border: 1px solid #c7d2fe !important; font-size: 8.5pt !important;
+      }
+      /* Services: drop the SVG blobs, keep text */
+      .service-item { border: 1px solid #e2e8f0 !important; padding: 12px !important; }
+      .service-item .icon svg { display: none !important; }
+      .service-item .icon i { color: #149ddd !important; font-size: 1.4em !important; }
+      .service-item h3 { color: #149ddd !important; font-size: 11pt !important; }
+      .service-item p { color: #475569 !important; font-size: 9.5pt !important; }
+      /* Methodology */
+      .stage-card { border: 1px solid #e2e8f0 !important; padding: 12px !important; }
+      .stage-num { background: #149ddd !important; color: #fff !important; }
+      .stage-when { background: #eef2ff !important; color: #1e40af !important; }
+      /* Talks + Writing cards */
+      .talk-card, .writing-card {
+        border: 1px solid #e2e8f0 !important; padding: 12px !important;
+        text-decoration: none !important;
+      }
+      .writing-card h4, .talk-card h4 { color: #149ddd !important; font-size: 11pt !important; }
+      /* Contact card */
+      .info-item { border: 1px solid #e2e8f0 !important; padding: 10px !important; }
+      /* Links */
+      a { color: #149ddd !important; text-decoration: underline !important; }
+      a[href^="http"]::after {
+        content: " (" attr(href) ")"; font-size: 8pt; color: #888;
+        word-break: break-all; font-weight: normal; text-decoration: none;
+      }
+      a[href^="#"]::after, a[href^="mailto:"]::after, a[download]::after,
+      a.btn::after, .btn::after { content: none !important; }
+      /* Footer */
+      footer { padding: 10px 0 !important; border-top: 1px solid #e2e8f0 !important; }
+      footer h3.sitename { color: #149ddd !important; font-size: 11pt !important; }
+      footer .credits, footer .copyright { display: none !important; }
+      /* Page breaks */
+      h2, h3 { page-break-after: avoid; }
+      .resume-item, .portfolio-item, .stage-card, .talk-card, .writing-card,
+      .build-pillar, .brand-tile, .tech-tile, .service-item, .info-item {
+        page-break-inside: avoid;
+      }
       img, svg { max-width: 100% !important; page-break-inside: avoid; }
     }
   </style>
@@ -966,7 +1066,9 @@
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
-          <a href="assets/Nirawit_Thepsawade_CV_2026.pdf" download class="btn btn-primary"><i class="bi bi-download me-2"></i>Download Full CV (PDF)</a>
+          <a href="assets/Nirawit_Thepsawade_CV_2026.pdf" download class="btn btn-primary"><i class="bi bi-download"></i>Download CV (1-page PDF)</a>
+          <button type="button" class="btn btn-outline-primary ms-2 no-print" onclick="window.print()"><i class="bi bi-file-earmark-pdf"></i>Save full page as PDF</button>
+          <div class="mt-2" style="font-size:0.82em;color:#94a3b8">CV PDF = quick 1-page resume · Full page PDF = everything you see here, for HR who wants the complete file</div>
         </div>
 
       </div>
