@@ -1,8 +1,8 @@
-# Nirawit Thepsawade · QA Lead
+# Nirawit Thepsawade · Sr. QA (Acting Lead)
 
-Personal CV / portfolio site. QA Lead based in Bangkok, 5+ years across
-Web, API, Mobile, POS, and Core Banking. Currently building the QA
-function at Ayodia.
+Personal CV / portfolio site. Sr. QA (Acting Lead) based in Bangkok, 6+ years across
+Web, API, Mobile, Smart TV, and Core Banking. Currently leading QA for
+the oneD streaming platform at ONE31 · The ONE Enterprise.
 
 > **Live site:** <https://bestniawit.github.io/nirawit-cv/>
 

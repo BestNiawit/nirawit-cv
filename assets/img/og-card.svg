@@ -46,17 +46,17 @@
   </g>
 
   <!-- eyebrow -->
-  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#93c5fd" letter-spacing="4">QUALITY ASSURANCE LEAD · BANGKOK</text>
+  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#93c5fd" letter-spacing="4">SR. QUALITY ASSURANCE (ACTING LEAD) · BANGKOK</text>
 
   <!-- name -->
   <text x="100" y="290" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="92" fill="#ffffff" letter-spacing="-2" filter="url(#ogshadow)">Nirawit Thepsawade</text>
 
   <!-- role tagline -->
-  <text x="100" y="350" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#e2e8f0">QA Lead · Automation Engineer · AI Workflow Builder</text>
+  <text x="100" y="350" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#e2e8f0">Sr. QA (Acting Lead) · Automation Engineer · AI Workflow Builder</text>
 
   <!-- description -->
-  <text x="100" y="420" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">5+ years across web, API, mobile, POS, and core banking.</text>
-  <text x="100" y="450" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">Building QA at Ayodia with 15 custom AI Skills on Claude Code.</text>
+  <text x="100" y="420" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">6+ years across web, API, mobile, Smart TV, and core banking.</text>
+  <text x="100" y="450" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">Leading QA for oneD streaming at ONE31 · 15 custom AI Skills on Claude Code.</text>
 
   <!-- chips row -->
   <g transform="translate(100, 500)">
@@ -70,7 +70,7 @@
     </g>
     <g transform="translate(304, 0)">
       <rect x="0" y="0" width="86" height="36" rx="18" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-      <text x="43" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#ffffff" text-anchor="middle">Jenkins</text>
+      <text x="43" y="23" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="#ffffff" text-anchor="middle">Appium</text>
     </g>
     <g transform="translate(402, 0)">
       <rect x="0" y="0" width="170" height="36" rx="18" fill="rgba(251,191,36,0.18)" stroke="rgba(251,191,36,0.45)" stroke-width="1"/>
@@ -86,5 +86,5 @@
   </g>
 
   <!-- domain -->
-  <text x="1100" y="595" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#94a3b8" text-anchor="end" letter-spacing="2">NIRAWIT-CV.WORKERS.DEV</text>
+  <text x="1100" y="595" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#94a3b8" text-anchor="end" letter-spacing="2">NIRAWIT-CV.BOSSMA6.WORKERS.DEV</text>
 </svg>
