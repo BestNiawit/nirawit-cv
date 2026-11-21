@@ -1,6 +1,6 @@
-# Nirawit Thepsawade · Sr. QA (Acting Lead)
+# Nirawit Thepsawade · Senior QA (Acting QA Lead)
 
-Personal CV / portfolio site. Sr. QA (Acting Lead) based in Bangkok, 6+ years across
+Personal CV / portfolio site. Senior QA (Acting QA Lead) based in Bangkok, 6+ years across
 Web, API, Mobile, Smart TV, and Core Banking. Currently leading QA for
 the oneD streaming platform at ONE31 · The ONE Enterprise.
 
