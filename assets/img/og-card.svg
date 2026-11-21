@@ -46,17 +46,17 @@
   </g>
 
   <!-- eyebrow -->
-  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#93c5fd" letter-spacing="4">SR. QUALITY ASSURANCE (ACTING LEAD) · BANGKOK</text>
+  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="22" fill="#93c5fd" letter-spacing="4">SENIOR QA (ACTING QA LEAD) · BANGKOK</text>
 
   <!-- name -->
   <text x="100" y="290" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="92" fill="#ffffff" letter-spacing="-2" filter="url(#ogshadow)">Nirawit Thepsawade</text>
 
   <!-- role tagline -->
-  <text x="100" y="350" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#e2e8f0">Sr. QA (Acting Lead) · Automation Engineer · AI Workflow Builder</text>
+  <text x="100" y="350" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#e2e8f0">Acting QA Lead · Test Automation &amp; QA Ops · Streaming &amp; Banking</text>
 
   <!-- description -->
   <text x="100" y="420" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">6+ years across web, API, mobile, Smart TV, and core banking.</text>
-  <text x="100" y="450" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">Leading QA for oneD streaming at ONE31 · 15 custom AI Skills on Claude Code.</text>
+  <text x="100" y="450" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="22" fill="#cbd5e1">Cut full regression from 2–3 days to 2 hours with AI + a parallel device farm.</text>
 
   <!-- chips row -->
   <g transform="translate(100, 500)">
